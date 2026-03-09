@@ -1,0 +1,317 @@
+[
+  {
+    "ContainingType": "Program\u002B\u003C\u003Ec",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
+    "RelativePath": "",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/v1/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/v1/auth/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.CitaController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/citas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.CitaController",
+    "Method": "Create",
+    "RelativePath": "api/v1/citas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.CreateCitaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.CitaController",
+    "Method": "CambiarEstado",
+    "RelativePath": "api/v1/citas/{idCita}/estado",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCita",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.CambiarEstadoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.CitaController",
+    "Method": "GetMisCitas",
+    "RelativePath": "api/v1/citas/mias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.CitaController",
+    "Method": "GetMisPacientes",
+    "RelativePath": "api/v1/citas/mis-pacientes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.ConsultaController",
+    "Method": "Create",
+    "RelativePath": "api/v1/consultas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.CreateConsultaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.ConsultaController",
+    "Method": "GetByCita",
+    "RelativePath": "api/v1/consultas/cita/{idCita}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idCita",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.MascotaController",
+    "Method": "Create",
+    "RelativePath": "api/v1/mascotas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.CreateMascotaDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.MascotaController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/mascotas/{idMascota}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idMascota",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.MascotaController",
+    "Method": "GetMisMascotas",
+    "RelativePath": "api/v1/mascotas/mias",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.MascotaController",
+    "Method": "GetByUsuario",
+    "RelativePath": "api/v1/mascotas/usuario/{idUsuario}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUsuario",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.TratamientoController",
+    "Method": "Create",
+    "RelativePath": "api/v1/tratamientos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.CreateTratamientoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.TratamientoController",
+    "Method": "GetByConsulta",
+    "RelativePath": "api/v1/tratamientos/consulta/{idConsulta}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idConsulta",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.UsuarioController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/usuarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.UsuarioController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/usuarios/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.UsuarioController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/usuarios/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.UsuarioController",
+    "Method": "GetPerfil",
+    "RelativePath": "api/v1/usuarios/perfil",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.UsuarioController",
+    "Method": "UpdatePerfil",
+    "RelativePath": "api/v1/usuarios/perfil",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.UpdateUsuarioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.UsuarioController",
+    "Method": "GetVeterinarios",
+    "RelativePath": "api/v1/usuarios/veterinarios",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

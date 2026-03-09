@@ -1,0 +1,739 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "PetCare.API | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:7121"
+    },
+    {
+      "url": "http://localhost:5009"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "PetCare.API"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/citas": {
+      "get": {
+        "tags": [
+          "Cita"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Cita"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCitaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCitaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCitaDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/citas/mias": {
+      "get": {
+        "tags": [
+          "Cita"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/citas/mis-pacientes": {
+      "get": {
+        "tags": [
+          "Cita"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/citas/{idCita}/estado": {
+      "patch": {
+        "tags": [
+          "Cita"
+        ],
+        "parameters": [
+          {
+            "name": "idCita",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarEstadoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarEstadoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CambiarEstadoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/consultas/cita/{idCita}": {
+      "get": {
+        "tags": [
+          "Consulta"
+        ],
+        "parameters": [
+          {
+            "name": "idCita",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/consultas": {
+      "post": {
+        "tags": [
+          "Consulta"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsultaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsultaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsultaDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/mascotas/mias": {
+      "get": {
+        "tags": [
+          "Mascota"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/mascotas/usuario/{idUsuario}": {
+      "get": {
+        "tags": [
+          "Mascota"
+        ],
+        "parameters": [
+          {
+            "name": "idUsuario",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/mascotas": {
+      "post": {
+        "tags": [
+          "Mascota"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMascotaDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMascotaDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMascotaDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/mascotas/{idMascota}": {
+      "delete": {
+        "tags": [
+          "Mascota"
+        ],
+        "parameters": [
+          {
+            "name": "idMascota",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/tratamientos/consulta/{idConsulta}": {
+      "get": {
+        "tags": [
+          "Tratamiento"
+        ],
+        "parameters": [
+          {
+            "name": "idConsulta",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/tratamientos": {
+      "post": {
+        "tags": [
+          "Tratamiento"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTratamientoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTratamientoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTratamientoDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/usuarios": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/usuarios/veterinarios": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/usuarios/perfil": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUsuarioDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUsuarioDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUsuarioDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/usuarios/{id}": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Usuario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CambiarEstadoDto": {
+        "required": [
+          "estado"
+        ],
+        "type": "object",
+        "properties": {
+          "estado": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateCitaDto": {
+        "required": [
+          "idUsuario",
+          "idMascota",
+          "idClinica",
+          "idVeterinario",
+          "fecha",
+          "servicio",
+          "costo"
+        ],
+        "type": "object",
+        "properties": {
+          "idUsuario": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idMascota": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idClinica": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "idVeterinario": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "servicio": {
+            "type": "string"
+          },
+          "costo": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "CreateConsultaDto": {
+        "required": [
+          "idCita",
+          "diagnostico",
+          "observaciones"
+        ],
+        "type": "object",
+        "properties": {
+          "idCita": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "diagnostico": {
+            "type": "string"
+          },
+          "observaciones": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateMascotaDto": {
+        "required": [
+          "nombre",
+          "raza",
+          "peso",
+          "edad"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "raza": {
+            "type": "string"
+          },
+          "peso": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "edad": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          }
+        }
+      },
+      "CreateTratamientoDto": {
+        "required": [
+          "idConsulta",
+          "medicamento",
+          "dosis",
+          "plazo",
+          "costo"
+        ],
+        "type": "object",
+        "properties": {
+          "idConsulta": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "medicamento": {
+            "type": "string"
+          },
+          "dosis": {
+            "type": "string"
+          },
+          "plazo": {
+            "type": "string"
+          },
+          "costo": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "LoginDto": {
+        "required": [
+          "correo",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "correo": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "RegisterDto": {
+        "required": [
+          "nombre",
+          "correo",
+          "password",
+          "rolId"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "correo": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "rolId": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          }
+        }
+      },
+      "UpdateUsuarioDto": {
+        "required": [
+          "nombre",
+          "correo"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "correo": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "PetCare.API"
+    },
+    {
+      "name": "Auth"
+    },
+    {
+      "name": "Cita"
+    },
+    {
+      "name": "Consulta"
+    },
+    {
+      "name": "Mascota"
+    },
+    {
+      "name": "Tratamiento"
+    },
+    {
+      "name": "Usuario"
+    }
+  ]
+}
