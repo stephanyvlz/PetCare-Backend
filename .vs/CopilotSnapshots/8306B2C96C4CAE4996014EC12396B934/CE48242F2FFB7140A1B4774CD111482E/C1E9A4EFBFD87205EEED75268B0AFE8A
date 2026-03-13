@@ -12,22 +12,22 @@ public class UserRepository : IUserRepository
 
     public Task<User?> GetByEmailAsync(string email) =>
         _db.Users
-           .Include(u => u.role)
+           .Include(u => u.id_role)
            .FirstOrDefaultAsync(u => u.email == email);
 
     public Task<User?> GetByIdAsync(Guid id) =>
         _db.Users
-           .Include(u => u.role)
+           .Include(u => u.id_role)
            .FirstOrDefaultAsync(u => u.id_user == id);
 
     public Task<List<User>> GetAllAsync() =>
         _db.Users
-           .Include(u => u.role)
+           .Include(u => u.id_role)
            .ToListAsync();
 
     public Task<List<User>> GetByRolAsync(int rolId) =>
         _db.Users
-           .Include(u => u.role)
+           .Include(u => u.id_role)
            .Where(u => u.id_role == rolId)
            .ToListAsync();
 

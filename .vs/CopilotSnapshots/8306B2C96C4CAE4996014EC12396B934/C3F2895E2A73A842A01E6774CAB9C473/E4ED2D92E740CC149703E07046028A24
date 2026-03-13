@@ -23,6 +23,6 @@ public class User
     [ForeignKey(nameof(id_role))]
     public Role role { get; set; } = null!;
 
-    public ICollection<Pet> pets { get; set; } = new List<Pet>();
-    public ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
+    public ICollection<Pet> pets { get; set; } = [];
+    public ICollection<Appointment> Appointments { get; set; } = [];
 }
