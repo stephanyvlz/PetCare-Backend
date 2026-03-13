@@ -132,3 +132,4 @@ C:\Users\steph\OneDrive\Documentos\ProyectoVet\PetCare.API\obj\Debug\net10.0\ref
 C:\Users\steph\OneDrive\Documentos\ProyectoVet\PetCare.API\obj\Debug\net10.0\PetCare.API.pdb
 C:\Users\steph\OneDrive\Documentos\ProyectoVet\PetCare.API\obj\Debug\net10.0\PetCare.API.genruntimeconfig.cache
 C:\Users\steph\OneDrive\Documentos\ProyectoVet\PetCare.API\obj\Debug\net10.0\ref\PetCare.API.dll
+C:\Users\steph\OneDrive\Documentos\ProyectoVet\PetCare.API\obj\Debug\net10.0\PetCare.API.sourcelink.json

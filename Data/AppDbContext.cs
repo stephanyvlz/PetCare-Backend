@@ -7,48 +7,48 @@ public class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-    public DbSet<Rol> Roles => Set<Rol>();
-    public DbSet<Usuario> Usuarios => Set<Usuario>();
-    public DbSet<Mascota> Mascotas => Set<Mascota>();
-    public DbSet<Clinica> Clinicas => Set<Clinica>();
-    public DbSet<Cita> Citas => Set<Cita>();
-    public DbSet<Consulta> Consultas => Set<Consulta>();
-    public DbSet<Tratamiento> Tratamientos => Set<Tratamiento>();
+    public DbSet<Role> Roles => Set<Role>();
+    public DbSet<User> Users => Set<User>();
+    public DbSet<Pet> Pets => Set<Pet>();
+    public DbSet<Clinic> Clinic => Set<Clinic>();
+    public DbSet<Appointment> Appointment => Set<Appointment>();
+    public DbSet<Consultation> Consultation => Set<Consultation>();
+    public DbSet<Treatment> Treatment => Set<Treatment>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
         // Correo único
-        modelBuilder.Entity<Usuario>()
-            .HasIndex(u => u.Correo)
+        modelBuilder.Entity<User>()
+            .HasIndex(u => u.email)
             .IsUnique();
 
         // Cita → Usuario (cliente)
-        modelBuilder.Entity<Cita>()
-            .HasOne(c => c.Usuario)
-            .WithMany(u => u.Citas)
-            .HasForeignKey(c => c.IdUsuario)
+        modelBuilder.Entity<Appointment>()
+            .HasOne(c => c.User)
+            .WithMany(u => u.Appointments)
+            .HasForeignKey(c => c.id_user)
             .OnDelete(DeleteBehavior.Restrict);
 
         // Cita → Veterinario (también es Usuario)
-        modelBuilder.Entity<Cita>()
-            .HasOne(c => c.Veterinario)
+        modelBuilder.Entity<Appointment>()
+            .HasOne(c => c.veterinarian)
             .WithMany()
-            .HasForeignKey(c => c.IdVeterinario)
+            .HasForeignKey(c => c.id_veterinarian)
             .OnDelete(DeleteBehavior.Restrict);
 
         // Consulta → Cita (1 a 1)
-        modelBuilder.Entity<Consulta>()
-            .HasOne(c => c.Cita)
-            .WithOne(c => c.Consulta)
-            .HasForeignKey<Consulta>(c => c.IdCita);
+        modelBuilder.Entity<Consultation>()
+            .HasOne(c => c.Appointments)
+            .WithOne(c => c.Consultations)
+            .HasForeignKey<Consultation>(c => c.id_appointment);
 
         // Roles iniciales
-        modelBuilder.Entity<Rol>().HasData(
-            new Rol { IdRol = 1, NombreRol = "admin" },
-            new Rol { IdRol = 2, NombreRol = "veterinario" },
-            new Rol { IdRol = 3, NombreRol = "cliente" }
+        modelBuilder.Entity<Role>().HasData(
+            new Role { id_role = 1, role_name = "admin" },
+            new Role { id_role = 2, role_name = "veterinario" },
+            new Role { id_role = 3, role_name = "cliente" }
         );
     }
 }

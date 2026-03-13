@@ -1,0 +1,23 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace PetCare.API.Models.Entities;
+
+[Table("Consultations")]
+public class Consultation
+{
+    [Key]
+    public Guid id_consultation { get; set; } = Guid.NewGuid();
+
+    public Guid id_appointment { get; set; }
+    [ForeignKey(nameof(id_appointment))]
+    public Appointment Appointments { get; set; } = null!;
+
+    [Required]
+    public string diagnosis { get; set; } = string.Empty;
+    public string observation { get; set; } = string.Empty;
+
+    public DateTime consultation_date { get; set; } = DateTime.UtcNow;
+
+    public ICollection<Treatment> Treatments { get; set; } = new List<Treatment>();
+}

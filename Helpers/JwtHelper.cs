@@ -11,14 +11,13 @@ public class JwtHelper
     private readonly IConfiguration _config;
     public JwtHelper(IConfiguration config) => _config = config;
 
-    public string GenerateToken(Usuario usuario)
+    public string GenerateToken(User usuario)
     {
         var claims = new[]
         {
-            new Claim(ClaimTypes.NameIdentifier, usuario.IdUsuario.ToString()),
-            new Claim(ClaimTypes.Email,          usuario.Correo),
-            new Claim(ClaimTypes.Name,           usuario.Nombre),
-            new Claim(ClaimTypes.Role,           usuario.Rol.NombreRol)
+            new Claim(ClaimTypes.NameIdentifier, usuario.id_user.ToString()),
+            new Claim(ClaimTypes.Email,          usuario.email),
+            new Claim(ClaimTypes.Name,           usuario.name)
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));

@@ -25,6 +25,115 @@
         }
       }
     },
+    "/api/v1/Appointments": {
+      "get": {
+        "tags": [
+          "Appointment"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Appointment"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAppointmentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAppointmentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAppointmentDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/Appointments/mias": {
+      "get": {
+        "tags": [
+          "Appointment"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/Appointments/my-patients": {
+      "get": {
+        "tags": [
+          "Appointment"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/Appointments/{id_appointment}/status": {
+      "patch": {
+        "tags": [
+          "Appointment"
+        ],
+        "parameters": [
+          {
+            "name": "id_appointment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppointmentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppointmentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppointmentDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/v1/auth/register": {
       "post": {
         "tags": [
@@ -89,123 +198,14 @@
         }
       }
     },
-    "/api/v1/citas": {
+    "/api/v1/Consultations/Appoinment/{id_Appointment}": {
       "get": {
         "tags": [
-          "Cita"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Cita"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCitaDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCitaDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateCitaDto"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/citas/mias": {
-      "get": {
-        "tags": [
-          "Cita"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/citas/mis-pacientes": {
-      "get": {
-        "tags": [
-          "Cita"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/citas/{idCita}/estado": {
-      "patch": {
-        "tags": [
-          "Cita"
+          "Consultation"
         ],
         "parameters": [
           {
-            "name": "idCita",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CambiarEstadoDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CambiarEstadoDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CambiarEstadoDto"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/v1/consultas/cita/{idCita}": {
-      "get": {
-        "tags": [
-          "Consulta"
-        ],
-        "parameters": [
-          {
-            "name": "idCita",
+            "name": "id_appointment",
             "in": "path",
             "required": true,
             "schema": {
@@ -221,26 +221,26 @@
         }
       }
     },
-    "/api/v1/consultas": {
+    "/api/v1/Consultations": {
       "post": {
         "tags": [
-          "Consulta"
+          "Consultation"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateConsultaDto"
+                "$ref": "#/components/schemas/CreateConsultationDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateConsultaDto"
+                "$ref": "#/components/schemas/CreateConsultationDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateConsultaDto"
+                "$ref": "#/components/schemas/CreateConsultationDto"
               }
             }
           },
@@ -253,10 +253,10 @@
         }
       }
     },
-    "/api/v1/mascotas/mias": {
+    "/api/v1/mascotas/My-Pets": {
       "get": {
         "tags": [
-          "Mascota"
+          "Pet"
         ],
         "responses": {
           "200": {
@@ -265,14 +265,14 @@
         }
       }
     },
-    "/api/v1/mascotas/usuario/{idUsuario}": {
+    "/api/v1/mascotas/user/{id_user}": {
       "get": {
         "tags": [
-          "Mascota"
+          "Pet"
         ],
         "parameters": [
           {
-            "name": "idUsuario",
+            "name": "id_user",
             "in": "path",
             "required": true,
             "schema": {
@@ -291,23 +291,23 @@
     "/api/v1/mascotas": {
       "post": {
         "tags": [
-          "Mascota"
+          "Pet"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateMascotaDto"
+                "$ref": "#/components/schemas/CreatePetDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateMascotaDto"
+                "$ref": "#/components/schemas/CreatePetDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateMascotaDto"
+                "$ref": "#/components/schemas/CreatePetDto"
               }
             }
           },
@@ -320,14 +320,14 @@
         }
       }
     },
-    "/api/v1/mascotas/{idMascota}": {
+    "/api/v1/mascotas/{id_pet}": {
       "delete": {
         "tags": [
-          "Mascota"
+          "Pet"
         ],
         "parameters": [
           {
-            "name": "idMascota",
+            "name": "id_pet",
             "in": "path",
             "required": true,
             "schema": {
@@ -343,14 +343,14 @@
         }
       }
     },
-    "/api/v1/tratamientos/consulta/{idConsulta}": {
+    "/api/v1/treatments/consultation/{id_consultation}": {
       "get": {
         "tags": [
-          "Tratamiento"
+          "Treatment"
         ],
         "parameters": [
           {
-            "name": "idConsulta",
+            "name": "id_consultation",
             "in": "path",
             "required": true,
             "schema": {
@@ -366,26 +366,26 @@
         }
       }
     },
-    "/api/v1/tratamientos": {
+    "/api/v1/treatments": {
       "post": {
         "tags": [
-          "Tratamiento"
+          "Treatment"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateTratamientoDto"
+                "$ref": "#/components/schemas/CreateTreatmentDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateTratamientoDto"
+                "$ref": "#/components/schemas/CreateTreatmentDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateTratamientoDto"
+                "$ref": "#/components/schemas/CreateTreatmentDto"
               }
             }
           },
@@ -398,10 +398,10 @@
         }
       }
     },
-    "/api/v1/usuarios": {
+    "/api/v1/users": {
       "get": {
         "tags": [
-          "Usuario"
+          "User"
         ],
         "responses": {
           "200": {
@@ -410,10 +410,10 @@
         }
       }
     },
-    "/api/v1/usuarios/veterinarios": {
+    "/api/v1/users/veterinarians": {
       "get": {
         "tags": [
-          "Usuario"
+          "User"
         ],
         "responses": {
           "200": {
@@ -422,10 +422,10 @@
         }
       }
     },
-    "/api/v1/usuarios/perfil": {
+    "/api/v1/users/perfil": {
       "get": {
         "tags": [
-          "Usuario"
+          "User"
         ],
         "responses": {
           "200": {
@@ -435,23 +435,23 @@
       },
       "put": {
         "tags": [
-          "Usuario"
+          "User"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateUsuarioDto"
+                "$ref": "#/components/schemas/UpdateUserDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateUsuarioDto"
+                "$ref": "#/components/schemas/UpdateUserDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateUsuarioDto"
+                "$ref": "#/components/schemas/UpdateUserDto"
               }
             }
           },
@@ -464,10 +464,10 @@
         }
       }
     },
-    "/api/v1/usuarios/{id}": {
+    "/api/v1/users/{id}": {
       "get": {
         "tags": [
-          "Usuario"
+          "User"
         ],
         "parameters": [
           {
@@ -488,7 +488,7 @@
       },
       "delete": {
         "tags": [
-          "Usuario"
+          "User"
         ],
         "parameters": [
           {
@@ -511,98 +511,138 @@
   },
   "components": {
     "schemas": {
-      "CambiarEstadoDto": {
+      "AppointmentDto": {
         "required": [
-          "estado"
+          "id_appointment",
+          "user_name",
+          "pet_name",
+          "veterinarian_name",
+          "date",
+          "service",
+          "cost",
+          "status"
         ],
         "type": "object",
         "properties": {
-          "estado": {
+          "id_appointment": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "user_name": {
             "type": "string"
-          }
-        }
-      },
-      "CreateCitaDto": {
-        "required": [
-          "idUsuario",
-          "idMascota",
-          "idClinica",
-          "idVeterinario",
-          "fecha",
-          "servicio",
-          "costo"
-        ],
-        "type": "object",
-        "properties": {
-          "idUsuario": {
-            "type": "string",
-            "format": "uuid"
           },
-          "idMascota": {
-            "type": "string",
-            "format": "uuid"
+          "pet_name": {
+            "type": "string"
           },
-          "idClinica": {
-            "type": "string",
-            "format": "uuid"
+          "veterinarian_name": {
+            "type": "string"
           },
-          "idVeterinario": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "fecha": {
+          "date": {
             "type": "string",
             "format": "date-time"
           },
-          "servicio": {
+          "service": {
             "type": "string"
           },
-          "costo": {
+          "cost": {
             "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
             "type": [
               "number",
               "string"
             ],
             "format": "double"
+          },
+          "status": {
+            "type": "string"
           }
         }
       },
-      "CreateConsultaDto": {
+      "CreateAppointmentDto": {
         "required": [
-          "idCita",
-          "diagnostico",
-          "observaciones"
+          "id_user",
+          "id_pet",
+          "id_clinic",
+          "id_veterinarian",
+          "appointment_date",
+          "service",
+          "cost"
         ],
         "type": "object",
         "properties": {
-          "idCita": {
+          "id_user": {
             "type": "string",
             "format": "uuid"
           },
-          "diagnostico": {
+          "id_pet": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "id_clinic": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "id_veterinarian": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "appointment_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "service": {
             "type": "string"
           },
-          "observaciones": {
+          "cost": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "CreateConsultationDto": {
+        "required": [
+          "id_consultation",
+          "id_appointment",
+          "diagnosis",
+          "observations"
+        ],
+        "type": "object",
+        "properties": {
+          "id_consultation": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "id_appointment": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "diagnosis": {
+            "type": "string"
+          },
+          "observations": {
             "type": "string"
           }
         }
       },
-      "CreateMascotaDto": {
+      "CreatePetDto": {
         "required": [
-          "nombre",
-          "raza",
-          "peso",
-          "edad"
+          "name",
+          "breed",
+          "weight",
+          "age"
         ],
         "type": "object",
         "properties": {
-          "nombre": {
+          "name": {
             "type": "string"
           },
-          "raza": {
+          "breed": {
             "type": "string"
           },
-          "peso": {
+          "weight": {
             "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
             "type": [
               "number",
@@ -610,7 +650,7 @@
             ],
             "format": "double"
           },
-          "edad": {
+          "age": {
             "pattern": "^-?(?:0|[1-9]\\d*)$",
             "type": [
               "integer",
@@ -620,30 +660,30 @@
           }
         }
       },
-      "CreateTratamientoDto": {
+      "CreateTreatmentDto": {
         "required": [
-          "idConsulta",
-          "medicamento",
-          "dosis",
-          "plazo",
-          "costo"
+          "id_consultation",
+          "medication",
+          "dosage",
+          "duration",
+          "cost"
         ],
         "type": "object",
         "properties": {
-          "idConsulta": {
+          "id_consultation": {
             "type": "string",
             "format": "uuid"
           },
-          "medicamento": {
+          "medication": {
             "type": "string"
           },
-          "dosis": {
+          "dosage": {
             "type": "string"
           },
-          "plazo": {
+          "duration": {
             "type": "string"
           },
-          "costo": {
+          "cost": {
             "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
             "type": [
               "number",
@@ -655,12 +695,12 @@
       },
       "LoginDto": {
         "required": [
-          "correo",
+          "email",
           "password"
         ],
         "type": "object",
         "properties": {
-          "correo": {
+          "email": {
             "type": "string"
           },
           "password": {
@@ -670,23 +710,23 @@
       },
       "RegisterDto": {
         "required": [
-          "nombre",
-          "correo",
+          "name",
+          "email",
           "password",
-          "rolId"
+          "id_role"
         ],
         "type": "object",
         "properties": {
-          "nombre": {
+          "name": {
             "type": "string"
           },
-          "correo": {
+          "email": {
             "type": "string"
           },
           "password": {
             "type": "string"
           },
-          "rolId": {
+          "id_role": {
             "pattern": "^-?(?:0|[1-9]\\d*)$",
             "type": [
               "integer",
@@ -696,17 +736,17 @@
           }
         }
       },
-      "UpdateUsuarioDto": {
+      "UpdateUserDto": {
         "required": [
-          "nombre",
-          "correo"
+          "name",
+          "email"
         ],
         "type": "object",
         "properties": {
-          "nombre": {
+          "name": {
             "type": "string"
           },
-          "correo": {
+          "email": {
             "type": "string"
           }
         }
@@ -718,22 +758,22 @@
       "name": "PetCare.API"
     },
     {
+      "name": "Appointment"
+    },
+    {
       "name": "Auth"
     },
     {
-      "name": "Cita"
+      "name": "Consultation"
     },
     {
-      "name": "Consulta"
+      "name": "Pet"
     },
     {
-      "name": "Mascota"
+      "name": "Treatment"
     },
     {
-      "name": "Tratamiento"
-    },
-    {
-      "name": "Usuario"
+      "name": "User"
     }
   ]
 }

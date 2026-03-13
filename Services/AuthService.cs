@@ -8,10 +8,10 @@ namespace PetCare.API.Services;
 
 public class AuthService : IAuthService
 {
-    private readonly IUsuarioRepository _repo;
+    private readonly IUserRepository _repo;
     private readonly JwtHelper _jwt;
 
-    public AuthService(IUsuarioRepository repo, JwtHelper jwt)
+    public AuthService(IUserRepository repo, JwtHelper jwt)
     {
         _repo = repo;
         _jwt = jwt;
@@ -19,18 +19,18 @@ public class AuthService : IAuthService
 
     public async Task<string> RegisterAsync(RegisterDto dto)
     {
-        if (await _repo.GetByCorreoAsync(dto.Correo) is not null)
+        if (await _repo.GetByEmailAsync(dto.email) is not null)
             throw new Exception("El correo ya está registrado");
 
-        var usuario = new Usuario
+        var user = new User
         {
-            Nombre = dto.Nombre,
-            Correo = dto.Correo,
+            name = dto.name,
+            email = dto.email,
             Password = BCrypt.Net.BCrypt.HashPassword(dto.Password),
-            RolId = dto.RolId
+            id_role = dto.id_role
         };
 
-        await _repo.AddAsync(usuario);
+        await _repo.AddAsync(user);
         await _repo.SaveChangesAsync();
 
         return "Usuario registrado exitosamente";
@@ -38,12 +38,12 @@ public class AuthService : IAuthService
 
     public async Task<string> LoginAsync(LoginDto dto)
     {
-        var usuario = await _repo.GetByCorreoAsync(dto.Correo)
+        var user = await _repo.GetByEmailAsync(dto.email)
             ?? throw new Exception("Credenciales inválidas");
 
-        if (!BCrypt.Net.BCrypt.Verify(dto.Password, usuario.Password))
+        if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password))
             throw new Exception("Credenciales inválidas");
 
-        return _jwt.GenerateToken(usuario);
+        return _jwt.GenerateToken(user);
     }
 }

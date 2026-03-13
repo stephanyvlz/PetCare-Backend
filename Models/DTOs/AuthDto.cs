@@ -1,27 +1,30 @@
 ﻿namespace PetCare.API.Models.DTOs;
 
 public record RegisterDto(
-    string Nombre,
-    string Correo,
+    string name,
+    string email,
     string Password,
-    int RolId
+    int id_role
 );
 
 public record LoginDto(
-    string Correo,
+    string email,
     string Password
 );
 
-public record UsuarioDto(
-    Guid IdUsuario,
-    string Nombre,
-    string Correo,
-    string Rol
+public record UserDto(
+    Guid id_user, // identificador único del usuario
+    string name, // nombre del usuario
+    string email, // correo electrónico del usuario unico
+    string password, // contraseña encriptada
+    int id_role, // rol del usuario (1: Admin, 2: Veterinario, 3: Cliente)
+    DateTime created_at, // fecha de creación del usuario 
+    DateTime updated_at // ultima actualización del usuario
 );
 
-public record UpdateUsuarioDto(
-    string Nombre,
-    string Correo
+public record UpdateUserDto(
+    string name,
+    string email
 );
 
 public record LoginResponseDto(

@@ -1,0 +1,28 @@
+﻿using Microsoft.EntityFrameworkCore;
+using PetCare.API.Data;
+using PetCare.API.Models.Entities;
+using PetCare.API.Repositories.Interfaces;
+
+namespace PetCare.API.Repositories;
+
+public class ConsultationRepository : IConsultationRepository
+{
+    private readonly AppDbContext _db;
+    public ConsultationRepository(AppDbContext db) => _db = db;
+
+    public Task<Consultation?> GetByCitaAsync(Guid idCita) =>
+        _db.Consultas
+           .Include(c => c.Tratamientos)
+           .FirstOrDefaultAsync(c => c.IdCita == idCita);
+
+    public Task<Consultation?> GetByIdAsync(Guid id) =>
+        _db.Consultas
+           .Include(c => c.Tratamientos)
+           .FirstOrDefaultAsync(c => c.IdConsulta == id);
+
+    public async Task AddAsync(Consultation consulta) =>
+        await _db.Consultas.AddAsync(consulta);
+
+    public Task SaveChangesAsync() =>
+        _db.SaveChangesAsync();
+}

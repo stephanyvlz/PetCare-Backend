@@ -22,345 +22,345 @@ namespace PetCare.API.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Cita", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Appointment", b =>
                 {
-                    b.Property<Guid>("IdCita")
+                    b.Property<Guid>("id_appointment")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("Costo")
+                    b.Property<DateTime>("appointment_date")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<decimal>("cost")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("Estado")
+                    b.Property<Guid>("id_clinic")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("id_pet")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("id_user")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("id_veterinarian")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("service")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("status")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
-                    b.Property<DateTime>("Fecha")
-                        .HasColumnType("timestamp with time zone");
+                    b.HasKey("id_appointment");
 
-                    b.Property<Guid>("IdClinica")
-                        .HasColumnType("uuid");
+                    b.HasIndex("id_clinic");
 
-                    b.Property<Guid>("IdMascota")
-                        .HasColumnType("uuid");
+                    b.HasIndex("id_pet");
 
-                    b.Property<Guid>("IdUsuario")
-                        .HasColumnType("uuid");
+                    b.HasIndex("id_user");
 
-                    b.Property<Guid>("IdVeterinario")
-                        .HasColumnType("uuid");
+                    b.HasIndex("id_veterinarian");
 
-                    b.Property<string>("Servicio")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.HasKey("IdCita");
-
-                    b.HasIndex("IdClinica");
-
-                    b.HasIndex("IdMascota");
-
-                    b.HasIndex("IdUsuario");
-
-                    b.HasIndex("IdVeterinario");
-
-                    b.ToTable("citas");
+                    b.ToTable("Appointments");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Clinica", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Clinic", b =>
                 {
-                    b.Property<Guid>("IdClinica")
+                    b.Property<Guid>("id_clinic")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Horario")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<string>("Ubicacion")
+                    b.Property<string>("location")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
 
-                    b.HasKey("IdClinica");
+                    b.Property<string>("schedule")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
-                    b.ToTable("clinicas");
+                    b.HasKey("id_clinic");
+
+                    b.ToTable("Clinics");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Consulta", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Consultation", b =>
                 {
-                    b.Property<Guid>("IdConsulta")
+                    b.Property<Guid>("id_consultation")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Diagnostico")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("Fecha")
+                    b.Property<DateTime>("consultation_date")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("IdCita")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Observaciones")
+                    b.Property<string>("diagnosis")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("IdConsulta");
+                    b.Property<Guid>("id_appointment")
+                        .HasColumnType("uuid");
 
-                    b.HasIndex("IdCita")
+                    b.Property<string>("observation")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("id_consultation");
+
+                    b.HasIndex("id_appointment")
                         .IsUnique();
 
-                    b.ToTable("consultas");
+                    b.ToTable("Consultations");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Mascota", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Pet", b =>
                 {
-                    b.Property<Guid>("IdMascota")
+                    b.Property<Guid>("id_pet")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<int>("Edad")
+                    b.Property<int>("age")
                         .HasColumnType("integer");
 
-                    b.Property<Guid>("IdUsuario")
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Nombre")
+                    b.Property<string>("breed")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<decimal>("Peso")
+                    b.Property<Guid>("id_user")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<decimal>("weight")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("Raza")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                    b.HasKey("id_pet");
 
-                    b.HasKey("IdMascota");
+                    b.HasIndex("id_user");
 
-                    b.HasIndex("IdUsuario");
-
-                    b.ToTable("mascotas");
+                    b.ToTable("Pets");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Rol", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Role", b =>
                 {
-                    b.Property<int>("IdRol")
+                    b.Property<int>("id_role")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdRol"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id_role"));
 
-                    b.Property<string>("NombreRol")
+                    b.Property<string>("role_name")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("character varying(50)");
 
-                    b.HasKey("IdRol");
+                    b.HasKey("id_role");
 
-                    b.ToTable("roles");
+                    b.ToTable("Role");
 
                     b.HasData(
                         new
                         {
-                            IdRol = 1,
-                            NombreRol = "admin"
+                            id_role = 1,
+                            role_name = "admin"
                         },
                         new
                         {
-                            IdRol = 2,
-                            NombreRol = "veterinario"
+                            id_role = 2,
+                            role_name = "veterinario"
                         },
                         new
                         {
-                            IdRol = 3,
-                            NombreRol = "cliente"
+                            id_role = 3,
+                            role_name = "cliente"
                         });
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Tratamiento", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Treatment", b =>
                 {
-                    b.Property<Guid>("IdTratamiento")
+                    b.Property<Guid>("treatment_id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<decimal>("Costo")
+                    b.Property<decimal>("cost")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("Dosis")
+                    b.Property<string>("dosage")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<Guid>("IdConsulta")
+                    b.Property<string>("duration")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<Guid>("id_consultation")
                         .HasColumnType("uuid");
 
-                    b.Property<string>("Medicamento")
+                    b.Property<string>("medication")
                         .IsRequired()
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
-                    b.Property<string>("Plazo")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                    b.HasKey("treatment_id");
 
-                    b.HasKey("IdTratamiento");
+                    b.HasIndex("id_consultation");
 
-                    b.HasIndex("IdConsulta");
-
-                    b.ToTable("tratamientos");
+                    b.ToTable("Treatments");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Usuario", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.User", b =>
                 {
-                    b.Property<Guid>("IdUsuario")
+                    b.Property<Guid>("id_user")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
-
-                    b.Property<string>("Correo")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("character varying(150)");
-
-                    b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("RolId")
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("character varying(150)");
+
+                    b.Property<int>("id_role")
                         .HasColumnType("integer");
 
-                    b.HasKey("IdUsuario");
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
-                    b.HasIndex("Correo")
+                    b.HasKey("id_user");
+
+                    b.HasIndex("email")
                         .IsUnique();
 
-                    b.HasIndex("RolId");
+                    b.HasIndex("id_role");
 
-                    b.ToTable("usuarios");
+                    b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Cita", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Appointment", b =>
                 {
-                    b.HasOne("PetCare.API.Models.Entities.Clinica", "Clinica")
-                        .WithMany("Citas")
-                        .HasForeignKey("IdClinica")
+                    b.HasOne("PetCare.API.Models.Entities.Clinic", "Clinic")
+                        .WithMany("Appointment")
+                        .HasForeignKey("id_clinic")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PetCare.API.Models.Entities.Mascota", "Mascota")
-                        .WithMany("Citas")
-                        .HasForeignKey("IdMascota")
+                    b.HasOne("PetCare.API.Models.Entities.Pet", "Pet")
+                        .WithMany("Appointments")
+                        .HasForeignKey("id_pet")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PetCare.API.Models.Entities.Usuario", "Usuario")
-                        .WithMany("Citas")
-                        .HasForeignKey("IdUsuario")
+                    b.HasOne("PetCare.API.Models.Entities.User", "User")
+                        .WithMany("Appointments")
+                        .HasForeignKey("id_user")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("PetCare.API.Models.Entities.Usuario", "Veterinario")
+                    b.HasOne("PetCare.API.Models.Entities.User", "veterinarian")
                         .WithMany()
-                        .HasForeignKey("IdVeterinario")
+                        .HasForeignKey("id_veterinarian")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Clinica");
+                    b.Navigation("Clinic");
 
-                    b.Navigation("Mascota");
+                    b.Navigation("Pet");
 
-                    b.Navigation("Usuario");
+                    b.Navigation("User");
 
-                    b.Navigation("Veterinario");
+                    b.Navigation("veterinarian");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Consulta", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Consultation", b =>
                 {
-                    b.HasOne("PetCare.API.Models.Entities.Cita", "Cita")
-                        .WithOne("Consulta")
-                        .HasForeignKey("PetCare.API.Models.Entities.Consulta", "IdCita")
+                    b.HasOne("PetCare.API.Models.Entities.Appointment", "Appointments")
+                        .WithOne("Consultations")
+                        .HasForeignKey("PetCare.API.Models.Entities.Consultation", "id_appointment")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Cita");
+                    b.Navigation("Appointments");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Mascota", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Pet", b =>
                 {
-                    b.HasOne("PetCare.API.Models.Entities.Usuario", "Usuario")
-                        .WithMany("Mascotas")
-                        .HasForeignKey("IdUsuario")
+                    b.HasOne("PetCare.API.Models.Entities.User", "user")
+                        .WithMany("pets")
+                        .HasForeignKey("id_user")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Usuario");
+                    b.Navigation("user");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Tratamiento", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Treatment", b =>
                 {
-                    b.HasOne("PetCare.API.Models.Entities.Consulta", "Consulta")
-                        .WithMany("Tratamientos")
-                        .HasForeignKey("IdConsulta")
+                    b.HasOne("PetCare.API.Models.Entities.Consultation", "Consultations")
+                        .WithMany("Treatments")
+                        .HasForeignKey("id_consultation")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Consulta");
+                    b.Navigation("Consultations");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Usuario", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.User", b =>
                 {
-                    b.HasOne("PetCare.API.Models.Entities.Rol", "Rol")
-                        .WithMany("Usuarios")
-                        .HasForeignKey("RolId")
+                    b.HasOne("PetCare.API.Models.Entities.Role", "role")
+                        .WithMany("Users")
+                        .HasForeignKey("id_role")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Rol");
+                    b.Navigation("role");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Cita", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Appointment", b =>
                 {
-                    b.Navigation("Consulta");
+                    b.Navigation("Consultations");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Clinica", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Clinic", b =>
                 {
-                    b.Navigation("Citas");
+                    b.Navigation("Appointment");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Consulta", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Consultation", b =>
                 {
-                    b.Navigation("Tratamientos");
+                    b.Navigation("Treatments");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Mascota", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Pet", b =>
                 {
-                    b.Navigation("Citas");
+                    b.Navigation("Appointments");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Rol", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.Role", b =>
                 {
-                    b.Navigation("Usuarios");
+                    b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("PetCare.API.Models.Entities.Usuario", b =>
+            modelBuilder.Entity("PetCare.API.Models.Entities.User", b =>
                 {
-                    b.Navigation("Citas");
+                    b.Navigation("Appointments");
 
-                    b.Navigation("Mascotas");
+                    b.Navigation("pets");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,12 @@
+﻿using PetCare.API.Models.Entities;
+
+namespace PetCare.API.Repositories.Interfaces;
+
+public interface IConsultationRepository
+{
+    Task<Consultation?> GetByCitaAsync(Guid idCita);
+    Task<Consultation?> GetByIdAsync(Guid id);
+    Task<List<Consultation>> GetByAppointmentAsync(Guid id_pet);
+    Task AddAsync(Consultation consulta);
+    Task SaveChangesAsync();
+}
