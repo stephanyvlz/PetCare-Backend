@@ -54,6 +54,21 @@ builder.Services.AddScoped<JwtHelper>();
 builder.Services.AddControllers();
 builder.Services.AddAuthorization();
 
+
+//Cords
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("cors",
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
+
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -68,6 +83,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseHttpsRedirection();
+
+app.UseCors("cors");
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapGet("/", () => Results.Redirect("/scalar/v1"));

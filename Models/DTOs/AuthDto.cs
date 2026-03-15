@@ -27,6 +27,16 @@ public record UpdateUserDto(
     string email
 );
 
+
+public record UserSessionDto(
+    Guid id_user,
+    string name,
+    string email,
+    int id_role
+);
+
+
 public record LoginResponseDto(
-    string Token
+    string Token,
+    UserSessionDto User
 );
