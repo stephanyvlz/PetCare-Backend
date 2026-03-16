@@ -29,7 +29,17 @@ public record UpdateUserDto(
     string? Password
 );
 
-public record LoginResponseDto(
-    string Token
+
+public record UserSessionDto(
+    Guid id_user,
+    string name,
+    string email,
+    int id_role,
+    string? phone
 );
 
+
+public record LoginResponseDto(
+    string Token,
+    UserSessionDto User
+);

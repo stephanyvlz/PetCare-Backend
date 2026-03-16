@@ -39,14 +39,23 @@ public class AuthService : IAuthService
         return "Usuario registrado exitosamente";
     }
 
-    public async Task<string> LoginAsync(LoginDto dto)
-    {
-        var user = await _repo.GetByEmailAsync(dto.email)
-            ?? throw new Exception("Credenciales inválidas");
+public async Task<LoginResponseDto> LoginAsync(LoginDto dto)
+{
+    var user = await _repo.GetByEmailAsync(dto.email)
+        ?? throw new Exception("Credenciales inválidas");
 
-        if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password))
-            throw new Exception("Credenciales inválidas");
+    if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password))
+        throw new Exception("Credenciales inválidas");
 
-        return _jwt.GenerateToken(user);
-    }
+    var token = _jwt.GenerateToken(user);
+
+    var userDto = new UserSessionDto(
+        user.id_user,
+        user.name,
+        user.email,
+        user.id_role
+    );
+
+    return new LoginResponseDto(token, userDto);
+}
 }

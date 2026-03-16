@@ -484,3 +484,14 @@ $RECYCLE.BIN/
 # configuration sensitive
 appsettings.Development.json
 appsettings.Production.json
+
+# Build outputs
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+
+# Logs
+*.log

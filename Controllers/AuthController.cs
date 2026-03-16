@@ -21,10 +21,16 @@ public class AuthController : ControllerBase
         return Ok(ApiResponse<string>.Ok(mensaje));
     }
 
-    [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginDto dto)
-    {
-        var token = await _authService.LoginAsync(dto);
-        return Ok(ApiResponse<LoginResponseDto>.Ok(new LoginResponseDto(token), "Login exitoso"));
-    }
+[HttpPost("login")]
+public async Task<IActionResult> Login([FromBody] LoginDto dto)
+{
+    var response = await _authService.LoginAsync(dto);
+
+    return Ok(
+        ApiResponse<LoginResponseDto>.Ok(
+            response,
+            "Login exitoso"
+        )
+    );
+}
 }
