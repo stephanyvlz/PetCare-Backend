@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -30,10 +31,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)),
+            RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role" // ← agrega esto
         };
     });
-
 // ── OpenAPI + Scalar ──────────────────────────────────────
 builder.Services.AddOpenApi();
 
@@ -51,20 +52,44 @@ builder.Services.AddScoped<IConsultationService, ConsultationService>();
 builder.Services.AddScoped<ITreatmentService, TreatmentService>();
 builder.Services.AddScoped<JwtHelper>();
 
+// ── API Versioning ────────────────────────────────────────
+builder.Services.AddApiVersioning(opt =>
+{
+    opt.DefaultApiVersion = new ApiVersion(1, 0);
+    opt.AssumeDefaultVersionWhenUnspecified = true;
+    opt.ReportApiVersions = true; // devuelve headers api-supported-versions
+    opt.ApiVersionReader = ApiVersionReader.Combine(
+        new UrlSegmentApiVersionReader(),   // /api/v1/...
+        new HeaderApiVersionReader("PetCare-Api-Version") // opcional: por header
+    );
+})
+.AddApiExplorer(opt =>
+{
+    opt.GroupNameFormat = "'v'VVV";
+    opt.SubstituteApiVersionInUrl = true;
+});
+
 builder.Services.AddControllers();
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+
+var version = System.Reflection.Assembly
+    .GetExecutingAssembly()
+    .GetName()
+    .Version?.ToString() ?? "3.2.0";
 
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
     app.MapScalarApiReference(options =>
     {
-        options.Title = "PetCare API";
+        options.Title = $"PetCare API v{version}";
         options.Theme = ScalarTheme.DeepSpace;
     });
 }
+
+
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseHttpsRedirection();

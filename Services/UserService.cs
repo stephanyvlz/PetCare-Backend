@@ -34,13 +34,11 @@ public class UserService : IUserService
     {
         var user = await _repo.GetByIdAsync(id)
             ?? throw new Exception("Usuario no encontrado");
-
         user.name = dto.name;
         user.email = dto.email;
-
+        user.updated_at = DateTime.UtcNow; 
         await _repo.UpdateAsync(user);
         await _repo.SaveChangesAsync();
-
         return MapToDto(user);
     }
 
@@ -48,11 +46,10 @@ public class UserService : IUserService
     {
         var user = await _repo.GetByIdAsync(id)
             ?? throw new Exception("Usuario no encontrado");
-
-        _repo.GetAllAsync(); // solo valida que existe
+        await _repo.DeleteAsync(user);  // ← usa el método del repo
         await _repo.SaveChangesAsync();
     }
 
     private static UserDto MapToDto(Models.Entities.User u) =>
-        new(u.id_user, u.name, u.email, u.Password ?? string.Empty, u.id_role, default, default);
+        new(u.id_user, u.name, u.email, u.id_role,u.phone, u.created_at, u.updated_at);
 }

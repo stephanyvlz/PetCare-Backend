@@ -13,18 +13,6 @@
     }
   ],
   "paths": {
-    "/": {
-      "get": {
-        "tags": [
-          "PetCare.API"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/v1/Appointments": {
       "get": {
         "tags": [
@@ -253,7 +241,7 @@
         }
       }
     },
-    "/api/v1/mascotas/My-Pets": {
+    "/api/v1/Pets/My-Pets": {
       "get": {
         "tags": [
           "Pet"
@@ -265,7 +253,7 @@
         }
       }
     },
-    "/api/v1/mascotas/user/{id_user}": {
+    "/api/v1/Pets/user/{id_user}": {
       "get": {
         "tags": [
           "Pet"
@@ -288,7 +276,7 @@
         }
       }
     },
-    "/api/v1/mascotas": {
+    "/api/v1/Pets": {
       "post": {
         "tags": [
           "Pet"
@@ -320,7 +308,7 @@
         }
       }
     },
-    "/api/v1/mascotas/{id_pet}": {
+    "/api/v1/Pets/{id_pet}": {
       "delete": {
         "tags": [
           "Pet"
@@ -343,7 +331,7 @@
         }
       }
     },
-    "/api/v1/treatments/consultation/{id_consultation}": {
+    "/api/v1/Treatments/consultation/{id_consultation}": {
       "get": {
         "tags": [
           "Treatment"
@@ -366,7 +354,7 @@
         }
       }
     },
-    "/api/v1/treatments": {
+    "/api/v1/Treatments": {
       "post": {
         "tags": [
           "Treatment"
@@ -398,7 +386,7 @@
         }
       }
     },
-    "/api/v1/users": {
+    "/api/v1/Users": {
       "get": {
         "tags": [
           "User"
@@ -410,7 +398,7 @@
         }
       }
     },
-    "/api/v1/users/veterinarians": {
+    "/api/v1/Users/veterinarians": {
       "get": {
         "tags": [
           "User"
@@ -422,7 +410,7 @@
         }
       }
     },
-    "/api/v1/users/perfil": {
+    "/api/v1/Users/perfil": {
       "get": {
         "tags": [
           "User"
@@ -464,7 +452,7 @@
         }
       }
     },
-    "/api/v1/users/{id}": {
+    "/api/v1/Users/{id}": {
       "get": {
         "tags": [
           "User"
@@ -500,6 +488,18 @@
               "format": "uuid"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "PetCare.API"
         ],
         "responses": {
           "200": {
@@ -713,7 +713,8 @@
           "name",
           "email",
           "password",
-          "id_role"
+          "id_role",
+          "phone"
         ],
         "type": "object",
         "properties": {
@@ -733,13 +734,21 @@
               "string"
             ],
             "format": "int32"
+          },
+          "phone": {
+            "type": [
+              "null",
+              "string"
+            ]
           }
         }
       },
       "UpdateUserDto": {
         "required": [
           "name",
-          "email"
+          "email",
+          "phone",
+          "password"
         ],
         "type": "object",
         "properties": {
@@ -748,15 +757,24 @@
           },
           "email": {
             "type": "string"
+          },
+          "phone": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "password": {
+            "type": [
+              "null",
+              "string"
+            ]
           }
         }
       }
     }
   },
   "tags": [
-    {
-      "name": "PetCare.API"
-    },
     {
       "name": "Appointment"
     },
@@ -774,6 +792,9 @@
     },
     {
       "name": "User"
+    },
+    {
+      "name": "PetCare.API"
     }
   ]
 }

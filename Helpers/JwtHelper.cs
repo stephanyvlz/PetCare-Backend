@@ -17,7 +17,8 @@ public class JwtHelper
         {
             new Claim(ClaimTypes.NameIdentifier, usuario.id_user.ToString()),
             new Claim(ClaimTypes.Email,          usuario.email),
-            new Claim(ClaimTypes.Name,           usuario.name)
+            new Claim(ClaimTypes.Name,           usuario.name),
+            new Claim(ClaimTypes.Role,           usuario.role.role_name)
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));

@@ -27,7 +27,10 @@ public class AuthService : IAuthService
             name = dto.name,
             email = dto.email,
             Password = BCrypt.Net.BCrypt.HashPassword(dto.Password),
-            id_role = dto.id_role
+            id_role = dto.id_role,
+            phone = dto.phone,
+            created_at = DateTime.UtcNow,  // ← esto evita el error 400
+            updated_at = DateTime.UtcNow   // ← esto también
         };
 
         await _repo.AddAsync(user);

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetCare.API.Models.DTOs;
 using PetCare.API.Models.Responses;
@@ -7,7 +8,8 @@ using PetCare.API.Services.Interfaces;
 namespace PetCare.API.Controllers;
 
 [ApiController]
-[Route("api/v1/treatments")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/Treatments")]
 [Authorize]
 public class TreatmentController : ControllerBase
 {

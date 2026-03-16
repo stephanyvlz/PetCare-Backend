@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "NOBSouvREG8=",
+  "dgSpecHash": "h0xd0FPVUZE=",
   "success": true,
   "projectFilePath": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\PetCare.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\steph\\.nuget\\packages\\asp.versioning.abstractions\\8.1.0\\asp.versioning.abstractions.8.1.0.nupkg.sha512",
+    "C:\\Users\\steph\\.nuget\\packages\\asp.versioning.http\\8.1.1\\asp.versioning.http.8.1.1.nupkg.sha512",
+    "C:\\Users\\steph\\.nuget\\packages\\asp.versioning.mvc\\8.1.1\\asp.versioning.mvc.8.1.1.nupkg.sha512",
+    "C:\\Users\\steph\\.nuget\\packages\\asp.versioning.mvc.apiexplorer\\8.1.1\\asp.versioning.mvc.apiexplorer.8.1.1.nupkg.sha512",
     "C:\\Users\\steph\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512",
     "C:\\Users\\steph\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\steph\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.3\\microsoft.aspnetcore.authentication.jwtbearer.10.0.3.nupkg.sha512",

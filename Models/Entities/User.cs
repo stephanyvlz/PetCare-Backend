@@ -15,6 +15,8 @@ public class User
     [Required, MaxLength(150)]
     public string email { get; set; } = string.Empty;
 
+    public string? phone { get; set; }
+
     [Required]
     public string Password { get; set; } = string.Empty;
 
@@ -25,4 +27,7 @@ public class User
 
     public ICollection<Pet> pets { get; set; } = new List<Pet>();
     public ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
+
+    public DateTime created_at { get; set; } = DateTime.UtcNow;
+    public DateTime updated_at { get; set; } = DateTime.UtcNow;
 }

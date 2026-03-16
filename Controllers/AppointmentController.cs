@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetCare.API.Models.DTOs;
 using PetCare.API.Models.Entities;
@@ -9,7 +10,8 @@ using System.Security.Claims;
 namespace PetCare.API.Controllers;
 
 [ApiController]
-[Route("api/v1/Appointments")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/Appointments")]
 [Authorize]
 public class AppointmentController : ControllerBase
 {

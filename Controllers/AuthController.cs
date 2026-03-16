@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using PetCare.API.Models.DTOs;
 using PetCare.API.Models.Responses;
@@ -6,7 +7,8 @@ using PetCare.API.Services.Interfaces;
 namespace PetCare.API.Controllers;
 
 [ApiController]
-[Route("api/v1/auth")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/auth")]
 public class AuthController : ControllerBase
 {
     private readonly IAuthService _authService;

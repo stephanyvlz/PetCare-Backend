@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_5",
     "RelativePath": "",
     "HttpMethod": "GET",
     "IsController": false,
@@ -149,7 +149,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.PetController",
     "Method": "Create",
-    "RelativePath": "api/v1/mascotas",
+    "RelativePath": "api/v1/Pets",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -165,7 +165,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.PetController",
     "Method": "Delete",
-    "RelativePath": "api/v1/mascotas/{id_pet}",
+    "RelativePath": "api/v1/Pets/{id_pet}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -181,7 +181,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.PetController",
     "Method": "GetMyPets",
-    "RelativePath": "api/v1/mascotas/My-Pets",
+    "RelativePath": "api/v1/Pets/My-Pets",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -191,7 +191,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.PetController",
     "Method": "GetByUser",
-    "RelativePath": "api/v1/mascotas/user/{id_user}",
+    "RelativePath": "api/v1/Pets/user/{id_user}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -207,7 +207,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.TreatmentController",
     "Method": "Create",
-    "RelativePath": "api/v1/treatments",
+    "RelativePath": "api/v1/Treatments",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -223,7 +223,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.TreatmentController",
     "Method": "GetByConsultation",
-    "RelativePath": "api/v1/treatments/consultation/{id_consultation}",
+    "RelativePath": "api/v1/Treatments/consultation/{id_consultation}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -239,7 +239,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.UserController",
     "Method": "GetAll",
-    "RelativePath": "api/v1/users",
+    "RelativePath": "api/v1/Users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -249,7 +249,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.UserController",
     "Method": "GetById",
-    "RelativePath": "api/v1/users/{id}",
+    "RelativePath": "api/v1/Users/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -265,7 +265,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.UserController",
     "Method": "Delete",
-    "RelativePath": "api/v1/users/{id}",
+    "RelativePath": "api/v1/Users/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -281,7 +281,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.UserController",
     "Method": "GetPerfil",
-    "RelativePath": "api/v1/users/perfil",
+    "RelativePath": "api/v1/Users/perfil",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -291,7 +291,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.UserController",
     "Method": "UpdatePerfil",
-    "RelativePath": "api/v1/users/perfil",
+    "RelativePath": "api/v1/Users/perfil",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -307,7 +307,7 @@
   {
     "ContainingType": "PetCare.API.Controllers.UserController",
     "Method": "GetVeterinarios",
-    "RelativePath": "api/v1/users/veterinarians",
+    "RelativePath": "api/v1/Users/veterinarians",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
