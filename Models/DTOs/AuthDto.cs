@@ -5,7 +5,8 @@ public record RegisterDto(
     string email,
     string Password,
     int id_role,
-    string? phone //el teléfono es opcional, por eso el tipo string?  
+    string? phone, //el teléfono es opcional, por eso el tipo string?  
+    Guid? id_clinic
 );
 public record LoginDto(
     string email,
@@ -19,14 +20,17 @@ public record UserDto(
     int id_role, // rol del usuario (1: Admin, 2: Veterinario, 3: Cliente)
     string? phone,
     DateTime created_at, // fecha de creación del usuario 
-    DateTime updated_at // ultima actualización del usuario
+    DateTime updated_at, // ultima actualización del usuario
+    Guid? id_clinic
 );
 
 public record UpdateUserDto(
     string name,
     string email,
     string? phone,
-    string? Password
+    string? Password,
+    Guid? id_clinic
+
 );
 
 

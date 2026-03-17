@@ -44,6 +44,8 @@ builder.Services.AddScoped<IPetRepository, PetRepository>();
 builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 builder.Services.AddScoped<IConsultationRepository, ConsultationRepository>();
 builder.Services.AddScoped<ITreatmentRepository, TreatmentRepository>();
+builder.Services.AddScoped<IClinicRepository, ClinicRepository>();
+builder.Services.AddScoped<IClinicService, ClinicService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IPetService, PetService>();
@@ -101,16 +103,18 @@ if (app.Environment.IsDevelopment())
     {
         options.Title = $"PetCare API v{version}";
         options.Theme = ScalarTheme.DeepSpace;
+        options.Authentication = new ScalarAuthenticationOptions
+        {
+            PreferredSecuritySchemes = ["Bearer"]
+        };
     });
 }
 
 
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
-app.UseHttpsRedirection();
-
 app.UseCors("cors");
-
+app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapGet("/", () => Results.Redirect("/scalar/v1"));

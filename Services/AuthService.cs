@@ -30,7 +30,8 @@ public class AuthService : IAuthService
             id_role = dto.id_role,
             phone = dto.phone,
             created_at = DateTime.UtcNow,  // ← esto evita el error 400
-            updated_at = DateTime.UtcNow   // ← esto también
+            updated_at = DateTime.UtcNow,   // ← esto también
+            id_clinic = dto.id_clinic
         };
 
         await _repo.AddAsync(user);
@@ -53,7 +54,8 @@ public async Task<LoginResponseDto> LoginAsync(LoginDto dto)
         user.id_user,
         user.name,
         user.email,
-        user.id_role
+        user.id_role,
+        user.phone
     );
 
     return new LoginResponseDto(token, userDto);

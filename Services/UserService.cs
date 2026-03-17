@@ -36,6 +36,8 @@ public class UserService : IUserService
             ?? throw new Exception("Usuario no encontrado");
         user.name = dto.name;
         user.email = dto.email;
+        user.phone = dto.phone;
+        user.id_clinic = dto.id_clinic;
         user.updated_at = DateTime.UtcNow; 
         await _repo.UpdateAsync(user);
         await _repo.SaveChangesAsync();
@@ -51,5 +53,5 @@ public class UserService : IUserService
     }
 
     private static UserDto MapToDto(Models.Entities.User u) =>
-        new(u.id_user, u.name, u.email, u.id_role,u.phone, u.created_at, u.updated_at);
+        new(u.id_user, u.name, u.email, u.id_role,u.phone, u.created_at, u.updated_at, u.id_clinic);
 }

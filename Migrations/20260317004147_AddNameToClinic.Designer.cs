@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PetCare.API.Data;
@@ -11,9 +12,11 @@ using PetCare.API.Data;
 namespace PetCare.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260317004147_AddNameToClinic")]
+    partial class AddNameToClinic
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -242,9 +245,6 @@ namespace PetCare.API.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("character varying(150)");
 
-                    b.Property<Guid?>("id_clinic")
-                        .HasColumnType("uuid");
-
                     b.Property<int>("id_role")
                         .HasColumnType("integer");
 
@@ -263,8 +263,6 @@ namespace PetCare.API.Migrations
 
                     b.HasIndex("email")
                         .IsUnique();
-
-                    b.HasIndex("id_clinic");
 
                     b.HasIndex("id_role");
 
@@ -341,17 +339,11 @@ namespace PetCare.API.Migrations
 
             modelBuilder.Entity("PetCare.API.Models.Entities.User", b =>
                 {
-                    b.HasOne("PetCare.API.Models.Entities.Clinic", "Clinic")
-                        .WithMany("Veterinarians")
-                        .HasForeignKey("id_clinic");
-
                     b.HasOne("PetCare.API.Models.Entities.Role", "role")
                         .WithMany("Users")
                         .HasForeignKey("id_role")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Clinic");
 
                     b.Navigation("role");
                 });
@@ -364,8 +356,6 @@ namespace PetCare.API.Migrations
             modelBuilder.Entity("PetCare.API.Models.Entities.Clinic", b =>
                 {
                     b.Navigation("Appointment");
-
-                    b.Navigation("Veterinarians");
                 });
 
             modelBuilder.Entity("PetCare.API.Models.Entities.Consultation", b =>

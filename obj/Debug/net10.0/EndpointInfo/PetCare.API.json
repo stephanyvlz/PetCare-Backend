@@ -186,6 +186,133 @@
         }
       }
     },
+    "/api/v1/Clinics": {
+      "get": {
+        "tags": [
+          "Clinic"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Clinic"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateClinicDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateClinicDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateClinicDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/Clinics/{id}": {
+      "get": {
+        "tags": [
+          "Clinic"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Clinic"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateClinicDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateClinicDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateClinicDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Clinic"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/v1/Consultations/Appoinment/{id_Appointment}": {
       "get": {
         "tags": [
@@ -602,6 +729,25 @@
           }
         }
       },
+      "CreateClinicDto": {
+        "required": [
+          "name",
+          "location",
+          "schedule"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "schedule": {
+            "type": "string"
+          }
+        }
+      },
       "CreateConsultationDto": {
         "required": [
           "id_consultation",
@@ -714,7 +860,8 @@
           "email",
           "password",
           "id_role",
-          "phone"
+          "phone",
+          "id_clinic"
         ],
         "type": "object",
         "properties": {
@@ -740,6 +887,13 @@
               "null",
               "string"
             ]
+          },
+          "id_clinic": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
           }
         }
       },
@@ -748,7 +902,8 @@
           "name",
           "email",
           "phone",
-          "password"
+          "password",
+          "id_clinic"
         ],
         "type": "object",
         "properties": {
@@ -769,6 +924,13 @@
               "null",
               "string"
             ]
+          },
+          "id_clinic": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
           }
         }
       }
@@ -780,6 +942,9 @@
     },
     {
       "name": "Auth"
+    },
+    {
+      "name": "Clinic"
     },
     {
       "name": "Consultation"
