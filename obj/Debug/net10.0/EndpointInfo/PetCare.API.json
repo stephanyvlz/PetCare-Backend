@@ -55,6 +55,91 @@
         }
       }
     },
+    "/api/v1/Appointments/{id_appointment}": {
+      "get": {
+        "tags": [
+          "Appointment"
+        ],
+        "parameters": [
+          {
+            "name": "id_appointment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Appointment"
+        ],
+        "parameters": [
+          {
+            "name": "id_appointment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAppointmentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAppointmentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAppointmentDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Appointment"
+        ],
+        "parameters": [
+          {
+            "name": "id_appointment",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/v1/Appointments/mias": {
       "get": {
         "tags": [
@@ -99,17 +184,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AppointmentDto"
+                "$ref": "#/components/schemas/ChangeStatusDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AppointmentDto"
+                "$ref": "#/components/schemas/ChangeStatusDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AppointmentDto"
+                "$ref": "#/components/schemas/ChangeStatusDto"
               }
             }
           },
@@ -313,7 +398,134 @@
         }
       }
     },
-    "/api/v1/Consultations/Appoinment/{id_Appointment}": {
+    "/api/v1/Consultations/{id_consultation}": {
+      "get": {
+        "tags": [
+          "Consultation"
+        ],
+        "parameters": [
+          {
+            "name": "id_consultation",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Consultation"
+        ],
+        "parameters": [
+          {
+            "name": "id_consultation",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateConsultationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateConsultationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateConsultationDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Consultation"
+        ],
+        "parameters": [
+          {
+            "name": "id_consultation",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/Consultations": {
+      "get": {
+        "tags": [
+          "Consultation"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Consultation"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsultationDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsultationDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsultationDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/Consultations/appointment/{id_appointment}": {
       "get": {
         "tags": [
           "Consultation"
@@ -336,26 +548,36 @@
         }
       }
     },
-    "/api/v1/Consultations": {
+    "/api/v1/Pets": {
+      "get": {
+        "tags": [
+          "Pet"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "post": {
         "tags": [
-          "Consultation"
+          "Pet"
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateConsultationDto"
+                "$ref": "#/components/schemas/CreatePetDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateConsultationDto"
+                "$ref": "#/components/schemas/CreatePetDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateConsultationDto"
+                "$ref": "#/components/schemas/CreatePetDto"
               }
             }
           },
@@ -403,26 +625,121 @@
         }
       }
     },
-    "/api/v1/Pets": {
-      "post": {
+    "/api/v1/Pets/{id_pet}": {
+      "get": {
         "tags": [
           "Pet"
+        ],
+        "parameters": [
+          {
+            "name": "id_pet",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Pet"
+        ],
+        "parameters": [
+          {
+            "name": "id_pet",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreatePetDto"
+                "$ref": "#/components/schemas/UpdatePetDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreatePetDto"
+                "$ref": "#/components/schemas/UpdatePetDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CreatePetDto"
+                "$ref": "#/components/schemas/UpdatePetDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Pet"
+        ],
+        "parameters": [
+          {
+            "name": "id_pet",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/Treatments": {
+      "get": {
+        "tags": [
+          "Treatment"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Treatment"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTreatmentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTreatmentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTreatmentDto"
               }
             }
           },
@@ -435,14 +752,76 @@
         }
       }
     },
-    "/api/v1/Pets/{id_pet}": {
-      "delete": {
+    "/api/v1/Treatments/{treatment_id}": {
+      "get": {
         "tags": [
-          "Pet"
+          "Treatment"
         ],
         "parameters": [
           {
-            "name": "id_pet",
+            "name": "treatment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Treatment"
+        ],
+        "parameters": [
+          {
+            "name": "treatment_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTreatmentDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTreatmentDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTreatmentDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Treatment"
+        ],
+        "parameters": [
+          {
+            "name": "treatment_id",
             "in": "path",
             "required": true,
             "schema": {
@@ -481,38 +860,6 @@
         }
       }
     },
-    "/api/v1/Treatments": {
-      "post": {
-        "tags": [
-          "Treatment"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateTreatmentDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateTreatmentDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateTreatmentDto"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/v1/Users": {
       "get": {
         "tags": [
@@ -538,16 +885,6 @@
       }
     },
     "/api/v1/Users/perfil": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
       "put": {
         "tags": [
           "User"
@@ -556,17 +893,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateUserDto"
+                "$ref": "#/components/schemas/UpdateProfileDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateUserDto"
+                "$ref": "#/components/schemas/UpdateProfileDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateUserDto"
+                "$ref": "#/components/schemas/UpdateProfileDto"
               }
             }
           },
@@ -580,6 +917,47 @@
       }
     },
     "/api/v1/Users/{id}": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUpdateUserDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUpdateUserDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminUpdateUserDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "get": {
         "tags": [
           "User"
@@ -638,47 +1016,46 @@
   },
   "components": {
     "schemas": {
-      "AppointmentDto": {
+      "AdminUpdateUserDto": {
         "required": [
-          "id_appointment",
-          "user_name",
-          "pet_name",
-          "veterinarian_name",
-          "date",
-          "service",
-          "cost",
+          "name",
+          "email",
+          "phone",
+          "id_role",
+          "id_clinic"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "id_role": {
+            "type": "string"
+          },
+          "id_clinic": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          }
+        }
+      },
+      "ChangeStatusDto": {
+        "required": [
           "status"
         ],
         "type": "object",
         "properties": {
-          "id_appointment": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "user_name": {
-            "type": "string"
-          },
-          "pet_name": {
-            "type": "string"
-          },
-          "veterinarian_name": {
-            "type": "string"
-          },
-          "date": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "service": {
-            "type": "string"
-          },
-          "cost": {
-            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
-            "type": [
-              "number",
-              "string"
-            ],
-            "format": "double"
-          },
           "status": {
             "type": "string"
           }
@@ -750,17 +1127,12 @@
       },
       "CreateConsultationDto": {
         "required": [
-          "id_consultation",
           "id_appointment",
           "diagnosis",
           "observations"
         ],
         "type": "object",
         "properties": {
-          "id_consultation": {
-            "type": "string",
-            "format": "uuid"
-          },
           "id_appointment": {
             "type": "string",
             "format": "uuid"
@@ -897,13 +1269,81 @@
           }
         }
       },
-      "UpdateUserDto": {
+      "UpdateAppointmentDto": {
+        "required": [
+          "id_veterinarian",
+          "appointment_date",
+          "service"
+        ],
+        "type": "object",
+        "properties": {
+          "id_veterinarian": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "appointment_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "service": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateConsultationDto": {
+        "required": [
+          "diagnosis",
+          "observations"
+        ],
+        "type": "object",
+        "properties": {
+          "diagnosis": {
+            "type": "string"
+          },
+          "observations": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdatePetDto": {
+        "required": [
+          "name",
+          "breed",
+          "weight",
+          "age"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "breed": {
+            "type": "string"
+          },
+          "weight": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "age": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          }
+        }
+      },
+      "UpdateProfileDto": {
         "required": [
           "name",
           "email",
-          "phone",
           "password",
-          "id_clinic"
+          "phone"
         ],
         "type": "object",
         "properties": {
@@ -913,24 +1353,42 @@
           "email": {
             "type": "string"
           },
+          "password": {
+            "type": "string"
+          },
           "phone": {
             "type": [
               "null",
               "string"
             ]
+          }
+        }
+      },
+      "UpdateTreatmentDto": {
+        "required": [
+          "medication",
+          "dosage",
+          "duration",
+          "cost"
+        ],
+        "type": "object",
+        "properties": {
+          "medication": {
+            "type": "string"
           },
-          "password": {
-            "type": [
-              "null",
-              "string"
-            ]
+          "dosage": {
+            "type": "string"
           },
-          "id_clinic": {
+          "duration": {
+            "type": "string"
+          },
+          "cost": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
             "type": [
-              "null",
+              "number",
               "string"
             ],
-            "format": "uuid"
+            "format": "double"
           }
         }
       }

@@ -3,64 +3,164 @@
   "WorkspaceRootPath": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\entities\\consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\authdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\authdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\clinicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\clinicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\consultationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\consultationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\petdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\petdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\treatmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\treatmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\clinic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\entities\\clinic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\authdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\authdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\petrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\petrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\petservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\petservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\interfaces\\ipetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\interfaces\\ipetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\interfaces\\ipetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\interfaces\\ipetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\controllers\\petcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\petcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\treatmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\treatmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\treatmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\treatmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\interfaces\\itreatmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\interfaces\\itreatmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\interfaces\\itreatmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\interfaces\\itreatmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\controllers\\treatmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\treatmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\consultationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\consultationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\consultationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\consultationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\interfaces\\iconsultationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\interfaces\\iconsultationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\interfaces\\iconsultationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\interfaces\\iconsultationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\controllers\\consultationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\consultationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\treatmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\treatmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\treatment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\entities\\treatment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\consultationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\consultationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\entities\\consultation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\entities\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\petdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\petdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\interfaces\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\interfaces\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\interfaces\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\interfaces\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\entities\\appointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\appointmentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\dtos\\clinicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\dtos\\clinicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\clinic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\entities\\clinic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -87,14 +187,6 @@
       "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\cliniccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\controllers\\consultationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\consultationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\responses\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\responses\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -115,10 +207,6 @@
       "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -131,100 +219,12 @@
       "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:petcare.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\appointmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\controllers\\treatmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\treatmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\controllers\\petcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:controllers\\petcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\consultationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\consultationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\migrations\\20260313183200_migracion-del-back-con-correciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:migrations\\20260313183200_migracion-del-back-con-correciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\treatmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\treatmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\treatmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\treatmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\treatment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\entities\\treatment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\petservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\petservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\petrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\petrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\models\\entities\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:models\\entities\\pet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\interfaces\\ipetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\interfaces\\ipetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\interfaces\\ipetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\interfaces\\ipetrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\interfaces\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\interfaces\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\consultationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\consultationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\interfaces\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\interfaces\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\interfaces\\iconsultationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\interfaces\\iconsultationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\interfaces\\iconsultationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\interfaces\\iconsultationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\services\\interfaces\\itreatmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:services\\interfaces\\itreatmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\repositories\\interfaces\\itreatmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|solutionrelative:repositories\\interfaces\\itreatmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{707B604F-DE7F-C3F5-3671-EEE008379EF9}|PetCare.API.csproj|c:\\users\\steph\\onedrive\\documentos\\proyectovet\\petcare.api\\migrations\\20260309074643_secondmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -237,35 +237,36 @@
   ],
   "DocumentGroupContainers": [
     {
-      "Orientation": 0,
+      "Orientation": 1,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "DockedHeight": 810,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 22,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\User.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\User.cs",
               "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\User.cs",
               "RelativeToolTip": "Models\\Entities\\User.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAACIAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-09T06:30:38.978Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 23,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowCYAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAswIgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-09T04:34:46.8Z",
               "IsPinned": true,
@@ -273,111 +274,449 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TreatmentDto.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\TreatmentDto.cs",
-              "RelativeDocumentMoniker": "Models\\DTOs\\TreatmentDto.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\TreatmentDto.cs",
-              "RelativeToolTip": "Models\\DTOs\\TreatmentDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:47:05.483Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PetDto.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\PetDto.cs",
-              "RelativeDocumentMoniker": "Models\\DTOs\\PetDto.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\PetDto.cs",
-              "RelativeToolTip": "Models\\DTOs\\PetDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:45:20.482Z",
+              "WhenOpened": "2026-03-09T06:35:52.504Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ConsultationDto.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\ConsultationDto.cs",
-              "RelativeDocumentMoniker": "Models\\DTOs\\ConsultationDto.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\ConsultationDto.cs",
-              "RelativeToolTip": "Models\\DTOs\\ConsultationDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAwBYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:46:26.895Z",
+              "WhenOpened": "2026-03-09T04:24:54.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ClinicDto.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\ClinicDto.cs",
-              "RelativeDocumentMoniker": "Models\\DTOs\\ClinicDto.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\ClinicDto.cs",
-              "RelativeToolTip": "Models\\DTOs\\ClinicDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\UserService.cs*",
+              "RelativeToolTip": "Services\\UserService.cs*",
+              "ViewState": "AgIAACwAAAAAAAAAAAAowD8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T07:04:10.942Z",
+              "WhenOpened": "2026-03-09T07:11:43.576Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "AuthDto.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\AuthDto.cs",
               "RelativeDocumentMoniker": "Models\\DTOs\\AuthDto.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\AuthDto.cs",
-              "RelativeToolTip": "Models\\DTOs\\AuthDto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAIwCUAAAAIAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\AuthDto.cs*",
+              "RelativeToolTip": "Models\\DTOs\\AuthDto.cs*",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-09T07:01:53.388Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppointmentDto.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\AppointmentDto.cs",
-              "RelativeDocumentMoniker": "Models\\DTOs\\AppointmentDto.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\AppointmentDto.cs",
-              "RelativeToolTip": "Models\\DTOs\\AppointmentDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IUserService.cs*",
+              "RelativeToolTip": "Services\\Interfaces\\IUserService.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:46:01.382Z",
+              "WhenOpened": "2026-03-09T07:10:20.109Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\UserController.cs*",
+              "RelativeToolTip": "Controllers\\UserController.cs*",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwCkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T07:15:35.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Repositories\\UserRepository.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA5wCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:49:18.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PetRepository.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\PetRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\PetRepository.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\PetRepository.cs",
+              "RelativeToolTip": "Repositories\\PetRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA9wBAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:50:07.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PetService.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\PetService.cs",
+              "RelativeDocumentMoniker": "Services\\PetService.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\PetService.cs",
+              "RelativeToolTip": "Services\\PetService.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAwwAcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:52:07.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IPetRepository.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IPetRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IPetRepository.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IPetRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IPetRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:36:19.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IPetService.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IPetService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IPetService.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IPetService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IPetService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:38:58.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PetController.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\PetController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PetController.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\PetController.cs",
+              "RelativeToolTip": "Controllers\\PetController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:58:09.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TreatmentService.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\TreatmentService.cs",
+              "RelativeDocumentMoniker": "Services\\TreatmentService.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\TreatmentService.cs",
+              "RelativeToolTip": "Services\\TreatmentService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:56:58.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TreatmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\TreatmentRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\TreatmentRepository.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\TreatmentRepository.cs",
+              "RelativeToolTip": "Repositories\\TreatmentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:51:33.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ITreatmentService.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\ITreatmentService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ITreatmentService.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\ITreatmentService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ITreatmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:43:54.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ITreatmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\ITreatmentRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ITreatmentRepository.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\ITreatmentRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ITreatmentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:37:51.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TreatmentController.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\TreatmentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TreatmentController.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\TreatmentController.cs",
+              "RelativeToolTip": "Controllers\\TreatmentController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:59:32.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ConsultationService.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\ConsultationService.cs",
+              "RelativeDocumentMoniker": "Services\\ConsultationService.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\ConsultationService.cs",
+              "RelativeToolTip": "Services\\ConsultationService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:56:30.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ConsultationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\ConsultationRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\ConsultationRepository.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\ConsultationRepository.cs",
+              "RelativeToolTip": "Repositories\\ConsultationRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:51:07.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IConsultationRepository.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IConsultationRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IConsultationRepository.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IConsultationRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IConsultationRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:37:14.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IConsultationService.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IConsultationService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IConsultationService.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IConsultationService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IConsultationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:42:14.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ConsultationController.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\ConsultationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ConsultationController.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\ConsultationController.cs",
+              "RelativeToolTip": "Controllers\\ConsultationController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAADwvyUAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:59:06.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "TreatmentDto.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\TreatmentDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\TreatmentDto.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\TreatmentDto.cs",
+              "RelativeToolTip": "Models\\DTOs\\TreatmentDto.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:47:05.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Treatment.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Treatment.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Treatment.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Treatment.cs",
+              "RelativeToolTip": "Models\\Entities\\Treatment.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:32:23.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AppointmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\AppointmentRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\AppointmentRepository.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\AppointmentRepository.cs",
+              "RelativeToolTip": "Repositories\\AppointmentRepository.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAkwCQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:50:31.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAADwvxQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T04:22:24.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ConsultationDto.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\ConsultationDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\ConsultationDto.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\ConsultationDto.cs",
+              "RelativeToolTip": "Models\\DTOs\\ConsultationDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:46:26.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
               "Title": "Consultation.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Consultation.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Consultation.cs",
               "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Consultation.cs",
               "RelativeToolTip": "Models\\Entities\\Consultation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABTAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-09T06:31:54.134Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Clinic.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Clinic.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Clinic.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Clinic.cs",
-              "RelativeToolTip": "Models\\Entities\\Clinic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABDAAAAAAAAAA==",
+              "DocumentIndex": 30,
+              "Title": "Pet.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Pet.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Pet.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Pet.cs",
+              "RelativeToolTip": "Models\\Entities\\Pet.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAwAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:31:23.041Z",
+              "WhenOpened": "2026-03-09T06:31:03.977Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 31,
+              "Title": "PetDto.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\PetDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\PetDto.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\PetDto.cs",
+              "RelativeToolTip": "Models\\DTOs\\PetDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:45:20.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AppointmentService.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\AppointmentService.cs",
+              "RelativeDocumentMoniker": "Services\\AppointmentService.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\AppointmentService.cs",
+              "RelativeToolTip": "Services\\AppointmentService.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAIwBIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:55:42.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IAppointmentRepository.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IAppointmentRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IAppointmentRepository.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IAppointmentRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IAppointmentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:36:51.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "IAppointmentService.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IAppointmentService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IAppointmentService.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IAppointmentService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IAppointmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:41:15.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "AppointmentController.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\AppointmentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AppointmentController.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\AppointmentController.cs",
+              "RelativeToolTip": "Controllers\\AppointmentController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAswE8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-09T06:58:35.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
               "Title": "Appointment.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Appointment.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Appointment.cs",
@@ -390,56 +729,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\AuthService.cs",
-              "RelativeToolTip": "Services\\AuthService.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAApwCwAAAAEAAAAAAAAAA==",
+              "DocumentIndex": 37,
+              "Title": "AppointmentDto.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\AppointmentDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\AppointmentDto.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\AppointmentDto.cs",
+              "RelativeToolTip": "Models\\DTOs\\AppointmentDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T04:24:54.439Z",
+              "WhenOpened": "2026-03-09T06:46:01.382Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IUserRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IUserRepository.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAoAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 38,
+              "Title": "ClinicDto.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\ClinicDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\ClinicDto.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\DTOs\\ClinicDto.cs",
+              "RelativeToolTip": "Models\\DTOs\\ClinicDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:35:52.504Z"
+              "WhenOpened": "2026-03-09T07:04:10.942Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\UserService.cs",
-              "RelativeToolTip": "Services\\UserService.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowDEAAAA8AAAAAAAAAA==",
+              "DocumentIndex": 39,
+              "Title": "Clinic.cs",
+              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Clinic.cs",
+              "RelativeDocumentMoniker": "Models\\Entities\\Clinic.cs",
+              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Clinic.cs",
+              "RelativeToolTip": "Models\\Entities\\Clinic.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T07:11:43.576Z"
+              "WhenOpened": "2026-03-09T06:31:23.041Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "Repositories\\UserRepository.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAswCwAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:49:18.535Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 40,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Role.cs",
               "RelativeDocumentMoniker": "Models\\Entities\\Role.cs",
@@ -451,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 41,
               "Title": "ClinicService.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\ClinicService.cs",
               "RelativeDocumentMoniker": "Services\\ClinicService.cs",
@@ -463,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 42,
               "Title": "IClinicService.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IClinicService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IClinicService.cs",
@@ -475,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 43,
               "Title": "ClinicRepository.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\ClinicRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\ClinicRepository.cs",
@@ -487,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 44,
               "Title": "IClinicRepository.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IClinicRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\Interfaces\\IClinicRepository.cs",
@@ -499,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 45,
               "Title": "ClinicController.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\ClinicController.cs",
               "RelativeDocumentMoniker": "Controllers\\ClinicController.cs",
@@ -511,31 +838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ConsultationController.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\ConsultationController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ConsultationController.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\ConsultationController.cs",
-              "RelativeToolTip": "Controllers\\ConsultationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:59:06.231Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T07:15:35.986Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 46,
               "Title": "ApiResponse.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Responses\\ApiResponse.cs",
               "RelativeDocumentMoniker": "Models\\Responses\\ApiResponse.cs",
@@ -547,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 50,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -559,7 +862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 47,
               "Title": "ErrorHandLingMiddleware.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Middleware\\ErrorHandLingMiddleware.cs",
               "RelativeDocumentMoniker": "Middleware\\ErrorHandLingMiddleware.cs",
@@ -571,7 +874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 49,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -583,7 +886,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 48,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\.gitignore",
               "RelativeDocumentMoniker": ".gitignore",
@@ -595,19 +898,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAIwBwAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T04:22:24.313Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 51,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IAuthService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IAuthService.cs",
@@ -619,7 +910,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 53,
               "Title": "PetCare.API.csproj",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\PetCare.API.csproj",
               "RelativeDocumentMoniker": "PetCare.API.csproj",
@@ -631,7 +922,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 52,
               "Title": "JwtHelper.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Helpers\\JwtHelper.cs",
               "RelativeDocumentMoniker": "Helpers\\JwtHelper.cs",
@@ -643,43 +934,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "AppointmentController.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\AppointmentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AppointmentController.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\AppointmentController.cs",
-              "RelativeToolTip": "Controllers\\AppointmentController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAcwA0AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:58:35.036Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "PetController.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\PetController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PetController.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\PetController.cs",
-              "RelativeToolTip": "Controllers\\PetController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:58:09.51Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "TreatmentController.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\TreatmentController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TreatmentController.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Controllers\\TreatmentController.cs",
-              "RelativeToolTip": "Controllers\\TreatmentController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:59:32.169Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 54,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -691,19 +946,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "ConsultationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\ConsultationRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\ConsultationRepository.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\ConsultationRepository.cs",
-              "RelativeToolTip": "Repositories\\ConsultationRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:51:07.739Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 55,
               "Title": "20260313183200_Migracion-del-back-con-correciones.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Migrations\\20260313183200_Migracion-del-back-con-correciones.cs",
               "RelativeDocumentMoniker": "Migrations\\20260313183200_Migracion-del-back-con-correciones.cs",
@@ -712,210 +955,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-13T18:32:00.462Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "TreatmentRepository.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\TreatmentRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\TreatmentRepository.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\TreatmentRepository.cs",
-              "RelativeToolTip": "Repositories\\TreatmentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:51:33.955Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "TreatmentService.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\TreatmentService.cs",
-              "RelativeDocumentMoniker": "Services\\TreatmentService.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\TreatmentService.cs",
-              "RelativeToolTip": "Services\\TreatmentService.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:56:58.633Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "Treatment.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Treatment.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Treatment.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Treatment.cs",
-              "RelativeToolTip": "Models\\Entities\\Treatment.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:32:23.748Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "PetService.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\PetService.cs",
-              "RelativeDocumentMoniker": "Services\\PetService.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\PetService.cs",
-              "RelativeToolTip": "Services\\PetService.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAywA8AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:52:07.74Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "PetRepository.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\PetRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\PetRepository.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\PetRepository.cs",
-              "RelativeToolTip": "Repositories\\PetRepository.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAYwAcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:50:07.887Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "Pet.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Pet.cs",
-              "RelativeDocumentMoniker": "Models\\Entities\\Pet.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Models\\Entities\\Pet.cs",
-              "RelativeToolTip": "Models\\Entities\\Pet.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwA8AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:31:03.977Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "IPetService.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IPetService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IPetService.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IPetService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IPetService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:38:58.436Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "IPetRepository.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IPetRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IPetRepository.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IPetRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IPetRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:36:19.3Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "IAppointmentService.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IAppointmentService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IAppointmentService.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IAppointmentService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IAppointmentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:41:15.99Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "ConsultationService.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\ConsultationService.cs",
-              "RelativeDocumentMoniker": "Services\\ConsultationService.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\ConsultationService.cs",
-              "RelativeToolTip": "Services\\ConsultationService.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAcwDUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:56:30.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "AppointmentRepository.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\AppointmentRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\AppointmentRepository.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\AppointmentRepository.cs",
-              "RelativeToolTip": "Repositories\\AppointmentRepository.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAgwBwAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:50:31.614Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "IAppointmentRepository.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IAppointmentRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IAppointmentRepository.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IAppointmentRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IAppointmentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:36:51.27Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "AppointmentService.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\AppointmentService.cs",
-              "RelativeDocumentMoniker": "Services\\AppointmentService.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\AppointmentService.cs",
-              "RelativeToolTip": "Services\\AppointmentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:55:42.436Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "IConsultationRepository.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IConsultationRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IConsultationRepository.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\IConsultationRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IConsultationRepository.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAwAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:37:14.96Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "IConsultationService.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IConsultationService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IConsultationService.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IConsultationService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IConsultationService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:42:14.535Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IUserService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\IUserService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T07:10:20.109Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "ITreatmentService.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\ITreatmentService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\ITreatmentService.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Services\\Interfaces\\ITreatmentService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\ITreatmentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:43:54.192Z"
             },
             {
               "$type": "Document",
@@ -931,18 +970,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "ITreatmentRepository.cs",
-              "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\ITreatmentRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ITreatmentRepository.cs",
-              "ToolTip": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Repositories\\Interfaces\\ITreatmentRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\ITreatmentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-09T06:37:51.217Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 57,
               "Title": "20260309055153_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\Migrations\\20260309055153_InitialCreate.cs",
@@ -952,6 +979,16 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-09T05:51:53.741Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 253,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

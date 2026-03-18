@@ -43,6 +43,59 @@
   },
   {
     "ContainingType": "PetCare.API.Controllers.AppointmentController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/Appointments/{id_appointment}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id_appointment",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.AppointmentController",
+    "Method": "Update",
+    "RelativePath": "api/v1/Appointments/{id_appointment}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id_appointment",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.UpdateAppointmentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.AppointmentController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/Appointments/{id_appointment}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id_appointment",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.AppointmentController",
     "Method": "ChangeStatus",
     "RelativePath": "api/v1/Appointments/{id_appointment}/status",
     "HttpMethod": "PATCH",
@@ -56,7 +109,7 @@
       },
       {
         "Name": "dto",
-        "Type": "PetCare.API.Models.DTOs.AppointmentDto",
+        "Type": "PetCare.API.Models.DTOs.ChangeStatusDto",
         "IsRequired": true
       }
     ],
@@ -195,6 +248,16 @@
   },
   {
     "ContainingType": "PetCare.API.Controllers.ConsultationController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/Consultations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.ConsultationController",
     "Method": "Create",
     "RelativePath": "api/v1/Consultations",
     "HttpMethod": "POST",
@@ -211,8 +274,61 @@
   },
   {
     "ContainingType": "PetCare.API.Controllers.ConsultationController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/Consultations/{id_consultation}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id_consultation",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.ConsultationController",
+    "Method": "Update",
+    "RelativePath": "api/v1/Consultations/{id_consultation}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id_consultation",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.UpdateConsultationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.ConsultationController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/Consultations/{id_consultation}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id_consultation",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.ConsultationController",
     "Method": "GetByAppointment",
-    "RelativePath": "api/v1/Consultations/Appoinment/{id_Appointment}",
+    "RelativePath": "api/v1/Consultations/appointment/{id_appointment}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -227,6 +343,16 @@
   },
   {
     "ContainingType": "PetCare.API.Controllers.PetController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/Pets",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.PetController",
     "Method": "Create",
     "RelativePath": "api/v1/Pets",
     "HttpMethod": "POST",
@@ -236,6 +362,43 @@
       {
         "Name": "dto",
         "Type": "PetCare.API.Models.DTOs.CreatePetDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.PetController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/Pets/{id_pet}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id_pet",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.PetController",
+    "Method": "Update",
+    "RelativePath": "api/v1/Pets/{id_pet}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id_pet",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.UpdatePetDto",
         "IsRequired": true
       }
     ],
@@ -285,6 +448,16 @@
   },
   {
     "ContainingType": "PetCare.API.Controllers.TreatmentController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/Treatments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.TreatmentController",
     "Method": "Create",
     "RelativePath": "api/v1/Treatments",
     "HttpMethod": "POST",
@@ -294,6 +467,59 @@
       {
         "Name": "dto",
         "Type": "PetCare.API.Models.DTOs.CreateTreatmentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.TreatmentController",
+    "Method": "GetById",
+    "RelativePath": "api/v1/Treatments/{treatment_id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "treatment_id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.TreatmentController",
+    "Method": "Update",
+    "RelativePath": "api/v1/Treatments/{treatment_id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "treatment_id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.UpdateTreatmentDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.TreatmentController",
+    "Method": "Delete",
+    "RelativePath": "api/v1/Treatments/{treatment_id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "treatment_id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],
@@ -323,6 +549,27 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PetCare.API.Controllers.UserController",
+    "Method": "AdminUpdate",
+    "RelativePath": "api/v1/Users/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PetCare.API.Models.DTOs.AdminUpdateUserDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -359,17 +606,7 @@
   },
   {
     "ContainingType": "PetCare.API.Controllers.UserController",
-    "Method": "GetPerfil",
-    "RelativePath": "api/v1/Users/perfil",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "PetCare.API.Controllers.UserController",
-    "Method": "UpdatePerfil",
+    "Method": "UpdateProfile",
     "RelativePath": "api/v1/Users/perfil",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -377,7 +614,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "PetCare.API.Models.DTOs.UpdateUserDto",
+        "Type": "PetCare.API.Models.DTOs.UpdateProfileDto",
         "IsRequired": true
       }
     ],

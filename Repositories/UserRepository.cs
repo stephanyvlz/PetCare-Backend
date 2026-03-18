@@ -30,6 +30,11 @@ public class UserRepository : IUserRepository
            .Include(u => u.role)
            .Where(u => u.id_role == rolId)
            .ToListAsync();
+    public Task<List<User>> GetByClinicAndRolAsync(Guid id_clinic, int rolId) =>
+    _db.Users
+       .Include(u => u.role)
+       .Where(u => u.id_clinic == id_clinic && u.id_role == rolId)
+       .ToListAsync();
 
     public async Task AddAsync(User user) =>
         await _db.Users.AddAsync(user);

@@ -21,6 +21,12 @@ public record CreateAppointmentDto(
     decimal cost
 );
 
-public record CambiarStatusDto(
+public record UpdateAppointmentDto(
+    Guid id_veterinarian,
+    DateTime appointment_date,
+    string service
+);
+
+public record ChangeStatusDto(
     string status
 );

@@ -9,8 +9,12 @@ public record ConsultationDto(
 );
 
 public record CreateConsultationDto(
-    Guid id_consultation,
     Guid id_appointment,
+    string diagnosis,
+    string observations
+);
+
+public record UpdateConsultationDto(
     string diagnosis,
     string observations
 );

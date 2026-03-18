@@ -1,9 +1,11 @@
-﻿using PetCare.API.Models.Entities;
+﻿using PetCare.API.Models.DTOs;
+using PetCare.API.Models.Entities;
 
 namespace PetCare.API.Repositories.Interfaces;
 
 public interface IPetRepository
 {
+    Task<List<Pet>> GetAllAsync();
     Task<List<Pet>> GetByPetAsync(Guid id_user);
     Task<Pet?> GetByIdAsync(Guid id);
     Task UpdateAsync(Pet pet);

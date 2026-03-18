@@ -15,3 +15,10 @@ public record CreateTreatmentDto(
     string duration,
     decimal cost
 );
+
+public record UpdateTreatmentDto(
+    string medication,
+    string dosage,
+    string duration,
+    decimal cost
+);

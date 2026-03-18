@@ -1,11 +1,15 @@
-﻿using PetCare.API.Models.Entities;
+﻿using PetCare.API.Models.DTOs;
+using PetCare.API.Models.Entities;
 
 namespace PetCare.API.Repositories.Interfaces;
 
 public interface ITreatmentRepository
 {
-    Task<List<Treatment>> GetByConsultaAsync(Guid idConsulta);
-    Task AddAsync(Treatment tratamiento);
+    Task<List<Treatment>> GetAllAsync();
+    Task<Treatment?> GetByIdAsync(Guid id);
+    Task<List<Treatment>> GetByConsultationAsync(Guid id_consultation);
+    Task AddAsync(Treatment treatment);
+    Task UpdateAsync(Treatment treatment);
+    Task DeleteAsync(Treatment treatment);
     Task SaveChangesAsync();
-    Task<IEnumerable<object>> GetByConsultationAsync(Guid id_consultation);
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PetCare.API.Data;
+using PetCare.API.Models.DTOs;
 using PetCare.API.Models.Entities;
 using PetCare.API.Repositories.Interfaces;
 
@@ -10,14 +11,29 @@ public class PetRepository : IPetRepository
     private readonly AppDbContext _db;
     public PetRepository(AppDbContext db) => _db = db;
 
-    public Task<List<Pet>> GetByUserAsync(Guid id_user) =>
-        _db.Pets.Where(m => m.id_user == id_user).ToListAsync();
+    public Task<List<Pet>> GetAllAsync() =>
+    _db.Pets
+       .Include(p => p.user)
+       .ToListAsync();
+    public Task<List<Pet>> GetByPetAsync(Guid id_user) =>
+        _db.Pets
+           .Include(p => p.user)
+           .Where(p => p.id_user == id_user)
+           .ToListAsync();
 
     public Task<Pet?> GetByIdAsync(Guid id) =>
-        _db.Pets.FirstOrDefaultAsync(m => m.id_pet == id);
+        _db.Pets
+           .Include(p => p.user)
+           .FirstOrDefaultAsync(p => p.id_pet == id);
 
     public async Task AddAsync(Pet pet) =>
         await _db.Pets.AddAsync(pet);
+
+    public Task UpdateAsync(Pet pet)
+    {
+        _db.Pets.Update(pet);
+        return Task.CompletedTask;
+    }
 
     public Task DeleteAsync(Pet pet)
     {
@@ -27,14 +43,4 @@ public class PetRepository : IPetRepository
 
     public Task SaveChangesAsync() =>
         _db.SaveChangesAsync();
-
-    public Task<List<Pet>> GetByPetAsync(Guid id_user)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task UpdateAsync(Pet pet)
-    {
-        throw new NotImplementedException();
-    }
 }

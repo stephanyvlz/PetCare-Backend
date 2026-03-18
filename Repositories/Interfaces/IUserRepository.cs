@@ -8,6 +8,7 @@ public interface IUserRepository
     Task<User?> GetByIdAsync(Guid id);
     Task<List<User>> GetAllAsync();
     Task<List<User>> GetByRolAsync(int rolId);
+    Task<List<User>> GetByClinicAndRolAsync(Guid id_clinic, int rolId);
     Task DeleteAsync(User usuario);
     Task AddAsync(User usuario);
     Task UpdateAsync(User usuario);
