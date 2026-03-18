@@ -35,8 +35,23 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role" // ← agrega esto
         };
     });
+
 // ── OpenAPI + Scalar ──────────────────────────────────────
-builder.Services.AddOpenApi();
+builder.Services.AddOpenApi(options =>
+{
+    options.AddDocumentTransformer((document, context, cancellationToken) =>
+    {
+        document.Components ??= new();
+        document.Components.SecuritySchemes ??= new Dictionary<string, Microsoft.OpenApi.IOpenApiSecurityScheme>();
+        document.Components.SecuritySchemes["Bearer"] = new Microsoft.OpenApi.OpenApiSecurityScheme
+        {
+            Type = Microsoft.OpenApi.SecuritySchemeType.Http,
+            Scheme = "bearer",
+            BearerFormat = "JWT"
+        };
+        return Task.CompletedTask;
+    });
+});
 
 // ── Dependencias ──────────────────────────────────────────
 builder.Services.AddScoped<IUserRepository, UserRepository>();
@@ -103,14 +118,13 @@ if (app.Environment.IsDevelopment())
     {
         options.Title = $"PetCare API v{version}";
         options.Theme = ScalarTheme.DeepSpace;
-        options.Authentication = new ScalarAuthenticationOptions
-        {
-            PreferredSecuritySchemes = ["Bearer"]
-        };
+        options.AddPreferredSecuritySchemes("Bearer")
+            .AddHttpAuthentication("Bearer", bearer =>
+            {
+                bearer.Token = "";
+            });
     });
 }
-
-
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseCors("cors");
