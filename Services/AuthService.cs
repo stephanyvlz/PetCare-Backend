@@ -58,6 +58,6 @@ public async Task<LoginResponseDto> LoginAsync(LoginDto dto)
         user.phone
     );
 
-    return new LoginResponseDto(token, userDto);
+    return new LoginResponseDto(token);
 }
 }

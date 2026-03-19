@@ -44,6 +44,5 @@ public record UserSessionDto(
 
 
 public record LoginResponseDto(
-    string Token,
-    UserSessionDto User
+    string Token
 );
