@@ -40,13 +40,19 @@ public class UserController : ControllerBase
 
     // GET api/v1/usuarios/perfil
     // Cualquier usuario ve su propio perfil
+    [Authorize]
     [HttpGet("perfil")]
     public async Task<IActionResult> GetPerfil()
     {
-        var id_user = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-        var user = await _userService.GetByIdAsync(id_user);
-        return Ok(ApiResponse<UserDto>.Ok(user));
-    }
+       var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+    if (userIdClaim == null || !Guid.TryParse(userIdClaim, out var id_user))
+        return Unauthorized();
+
+    var user = await _userService.GetByIdAsync(id_user);
+
+    return Ok(ApiResponse<UserDto>.Ok(user));
+}
 
     // GET api/v1/usuarios/{id}
     // Solo admin puede ver el perfil de otro usuario
