@@ -38,22 +38,24 @@ public class UserController : ControllerBase
         return Ok(ApiResponse<List<UserDto>>.Ok(veterinarians));
     }
 
-    // GET api/v1/usuarios/perfil
-    // Cualquier usuario ve su propio perfil
-    [Authorize]
-    [HttpGet("perfil")]
-    public async Task<IActionResult> GetPerfil()
+
+    // PUT api/v1/Users/perfil — cualquier usuario edita solo nombre y teléfono
+    [HttpPut("perfil"!)]
+    [Authorize(Roles = "admin,cliente,veterinario")]
+    public async Task<IActionResult> UpdateProfile([FromBody] UpdateProfileDto dto)
     {
-       var userIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-    if (userIdClaim == null || !Guid.TryParse(userIdClaim, out var id_user))
-        return Unauthorized();
-
-    var user = await _userService.GetByIdAsync(id_user);
-
-    return Ok(ApiResponse<UserDto>.Ok(user));
-}
-
+        var id_user = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+        var user = await _userService.UpdateProfileAsync(id_user, dto);
+        return Ok(ApiResponse<UserDto>.Ok(user, "Perfil actualizado exitosamente"));
+    }
+    // PUT api/v1/Users/{id} — solo admin puede editar a otros usuarios y asignar clínica
+    [HttpPut("{id}")]
+    [Authorize(Roles = "admin")]
+    public async Task<IActionResult> AdminUpdate(Guid id, [FromBody] AdminUpdateUserDto dto)
+    {
+        var user = await _userService.AdminUpdateAsync(id, dto);
+        return Ok(ApiResponse<UserDto>.Ok(user, "Usuario actualizado exitosamente"));
+    }
     // GET api/v1/usuarios/{id}
     // Solo admin puede ver el perfil de otro usuario
     [HttpGet("{id}")]
@@ -63,17 +65,6 @@ public class UserController : ControllerBase
         var user = await _userService.GetByIdAsync(id);
         return Ok(ApiResponse<UserDto>.Ok(user));
     }
-
-    // PUT api/v1/usuarios/perfil
-    // Cualquier usuario puede editar su propio perfil
-    [HttpPut("perfil")]
-    public async Task<IActionResult> UpdatePerfil([FromBody] UpdateUserDto dto)
-    {
-        var id_user = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
-        var user = await _userService.UpdateAsync(id_user, dto);
-        return Ok(ApiResponse<UserDto>.Ok(user, "Perfil actualizado exitosamente"));
-    }
-
     // DELETE api/v1/usuarios/{id}
     // Solo admin puede eliminar usuarios
     [HttpDelete("{id}")]

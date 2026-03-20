@@ -28,6 +28,15 @@ public class AppointmentController : ControllerBase
         return Ok(ApiResponse<List<AppointmentDto>>.Ok(appointments));
     }
 
+    //GET api/v1/citas/{id}
+    [HttpGet("{id_appointment}")]
+    [Authorize(Roles = "admin,veterinario,cliente")]
+    public async Task<IActionResult> GetById(Guid id_appointment)
+    {
+        var appointment = await _appointmentService.GetByIdAsync(id_appointment);
+        return Ok(ApiResponse<AppointmentDto>.Ok(appointment));
+    }
+
     // GET api/v1/citas/mias
     // El cliente ve sus propias citas
     [HttpGet("mias")]
@@ -62,9 +71,30 @@ public class AppointmentController : ControllerBase
     // PATCH api/v1/citas/{idCita}/estado
     [HttpPatch("{id_appointment}/status")]
     [Authorize(Roles = "veterinario,admin")]
-    public async Task<IActionResult> ChangeStatus(Guid id_appointment, [FromBody] AppointmentDto dto)//ChangeStatusDto dto)
+    public async Task<IActionResult> ChangeStatus(Guid id_appointment, [FromBody] ChangeStatusDto dto)
     {
         var appointment = await _appointmentService.ChangeStatusAsync(id_appointment, dto.status);
         return Ok(ApiResponse<AppointmentDto>.Ok(appointment, "Estado actualizado"));
     }
+    //PATCH api/api/citas/{id} - solo pendientes
+    [HttpPut("{id_appointment}")]
+    [Authorize(Roles = "cliente, admin")]
+    public async Task<IActionResult> Update(Guid id_appointment, [FromBody] UpdateAppointmentDto dto)
+    {
+        var appointment = await _appointmentService.UpdateAsync(id_appointment, dto);
+        return Ok(ApiResponse<AppointmentDto>.Ok(appointment, "Cita actualizada exitosamente"));
+    }
+
+    // DELETE api/v1/Appointments/{id}
+    // Admin: elimina físicamente | Cliente: solo puede cancelar (PATCH status)
+    [HttpDelete("{id_appointment}")]
+    [Authorize(Roles = "admin")]
+    public async Task<IActionResult> Delete(Guid id_appointment)
+    {
+        await _appointmentService.DeleteAsync(id_appointment);
+        return Ok(ApiResponse<string>.Ok("Cita eliminada exitosamente"));
+    }
+
+
+
 }

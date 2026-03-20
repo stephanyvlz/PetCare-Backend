@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using PetCare.API.Models.DTOs;
+﻿using PetCare.API.Models.DTOs;
 using PetCare.API.Models.Entities;
 using PetCare.API.Repositories.Interfaces;
 using PetCare.API.Services.Interfaces;
@@ -19,38 +15,77 @@ public class TreatmentService : ITreatmentService
         _repo = repo;
         _consultationRepo = consultationRepo;
     }
+    public async Task<List<TreatmentDto>> GetAllAsync()
+    {
+        var treatments = await _repo.GetAllAsync();
+        return treatments.Select(MapToDto).ToList();
+    }
+    public async Task<TreatmentDto> GetByIdAsync(Guid treatment_id)
+    {
+        var treatment = await _repo.GetByIdAsync(treatment_id)
+            ?? throw new Exception("Tratamiento no encontrado");
+        return MapToDto(treatment);
+    }
+
+    public async Task<List<TreatmentDto>> GetByConsultationAsync(Guid id_consultation)
+    {
+        var treatments = await _repo.GetByConsultationAsync(id_consultation);
+        return treatments.Select(MapToDto).ToList();
+    }
 
     public async Task<TreatmentDto> CreateAsync(CreateTreatmentDto dto)
     {
-        var consulta = await _consultationRepo.GetByIdAsync(dto.id_consultation)
+        var consultation = await _consultationRepo.GetByIdAsync(dto.id_consultation)
             ?? throw new Exception("Consulta no encontrada");
 
-        var tratamiento = new Treatment
+        var treatment = new Treatment
         {
             treatment_id = Guid.NewGuid(),
-            id_consultation = consulta.id_consultation,
+            id_consultation = consultation.id_consultation,
             medication = dto.medication,
             dosage = dto.dosage,
             duration = dto.duration,
             cost = dto.cost
         };
 
-        await _repo.AddAsync(tratamiento);
+        await _repo.AddAsync(treatment);
         await _repo.SaveChangesAsync();
 
-        return new TreatmentDto(tratamiento.treatment_id, tratamiento.medication,
-            tratamiento.dosage, tratamiento.duration, tratamiento.cost);
+        return MapToDto(treatment);
     }
 
-    public async Task<List<TreatmentDto>> GetByConsultationAsync(Guid id_consultation)
+    public async Task<TreatmentDto> UpdateAsync(Guid treatment_id, UpdateTreatmentDto dto)
     {
-        var treatments = await _repo.GetByConsultationAsync(id_consultation);
+        var treatment = await _repo.GetByIdAsync(treatment_id)
+            ?? throw new Exception("Tratamiento no encontrado");
 
-        // Convertir los elementos a Treatment antes de acceder a sus propiedades.
-        // Uso Cast<Treatment>() para forzar el tipo y exponer errores si los elementos no son Treatment.
-        return treatments.Cast<Treatment>()
-            .Select(t => new TreatmentDto(
-                t.treatment_id, t.medication, t.dosage, t.duration, t.cost))
-            .ToList();
+        treatment.medication = dto.medication;
+        treatment.dosage = dto.dosage;
+        treatment.duration = dto.duration;
+        treatment.cost = dto.cost;
+
+        await _repo.UpdateAsync(treatment);
+        await _repo.SaveChangesAsync();
+
+        var updated = await _repo.GetByIdAsync(treatment_id)
+            ?? throw new Exception("Error al actualizar el tratamiento");
+        return MapToDto(updated);
     }
+
+    public async Task DeleteAsync(Guid treatment_id)
+    {
+        var treatment = await _repo.GetByIdAsync(treatment_id)
+            ?? throw new Exception("Tratamiento no encontrado");
+
+        await _repo.DeleteAsync(treatment);
+        await _repo.SaveChangesAsync();
+    }
+
+    private static TreatmentDto MapToDto(Treatment t) => new(
+        t.treatment_id,
+        t.medication,
+        t.dosage,
+        t.duration,
+        t.cost
+    );
 }

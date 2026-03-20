@@ -10,11 +10,22 @@ public class PetService : IPetService
     private readonly IPetRepository _repo;
     public PetService(IPetRepository repo) => _repo = repo;
 
-    public async Task<List<PetDto>> GetByUsuarioAsync(Guid id_user)
+    public async Task<List<PetDto>> GetAllAsync()
+    {
+        var pets = await _repo.GetAllAsync();
+        return pets.Select(MapToDto).ToList();
+    }
+    public async Task<List<PetDto>> GetByUserAsync(Guid id_user)
     {
         var pets = await _repo.GetByPetAsync(id_user);
-        return pets.Select(m => new PetDto(
-            m.id_pet, m.name, m.breed, m.weight, m.age)).ToList();
+        return pets.Select(MapToDto).ToList();
+    }
+
+    public async Task<PetDto> GetByIdAsync(Guid id_pet)
+    {
+        var pet = await _repo.GetByIdAsync(id_pet)
+            ?? throw new Exception("Mascota no encontrada");
+        return MapToDto(pet);
     }
 
     public async Task<PetDto> CreateAsync(Guid id_user, CreatePetDto dto)
@@ -31,8 +42,28 @@ public class PetService : IPetService
         await _repo.AddAsync(pet);
         await _repo.SaveChangesAsync();
 
-        return new PetDto(pet.id_pet, pet.name,
-            pet.breed, pet.weight, pet.age);
+        // Recargar para traer la navegación User
+        var created = await _repo.GetByIdAsync(pet.id_pet)
+            ?? throw new Exception("Error al crear la mascota");
+        return MapToDto(created);
+    }
+
+    public async Task<PetDto> UpdateAsync(Guid id_pet, UpdatePetDto dto)
+    {
+        var pet = await _repo.GetByIdAsync(id_pet)
+            ?? throw new Exception("Mascota no encontrada");
+
+        pet.name = dto.name;
+        pet.breed = dto.breed;
+        pet.weight = dto.weight;
+        pet.age = dto.age;
+
+        await _repo.UpdateAsync(pet);
+        await _repo.SaveChangesAsync();
+
+        var updated = await _repo.GetByIdAsync(id_pet)
+            ?? throw new Exception("Error al actualizar la mascota");
+        return MapToDto(updated);
     }
 
     public async Task DeleteAsync(Guid id_pet)
@@ -44,18 +75,13 @@ public class PetService : IPetService
         await _repo.SaveChangesAsync();
     }
 
-    public Task<List<PetDto>> GetByUserAsync(Guid id_user)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<PetDto> UpdateAsync(Guid id_pet, UpdateUserDto dto)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<List<PetDto>> GetByPetAsync(Guid id_user)
-    {
-        throw new NotImplementedException();
-    }
+    private static PetDto MapToDto(Pet p) => new(
+        p.id_pet,
+        p.name,
+        p.breed,
+        p.weight,
+        p.age,
+        p.user?.name ?? "",
+        p.id_user
+    );
 }

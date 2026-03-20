@@ -4,9 +4,11 @@ namespace PetCare.API.Repositories.Interfaces;
 
 public interface IConsultationRepository
 {
-    Task<Consultation?> GetByCitaAsync(Guid idCita);
+    Task<List<Consultation>> GetAllAsync();
     Task<Consultation?> GetByIdAsync(Guid id);
     Task<Consultation?> GetByAppointmentAsync(Guid id_appointment);
     Task AddAsync(Consultation consulta);
+    Task UpdateAsync(Consultation consulta);
+    Task DeleteAsync(Consultation consulta);
     Task SaveChangesAsync();
 }

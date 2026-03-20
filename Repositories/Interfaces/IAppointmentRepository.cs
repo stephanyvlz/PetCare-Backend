@@ -9,5 +9,7 @@ public interface IAppointmentRepository
     Task<List<Appointment>> GetByVeterinarianAsync(Guid id_veterinarian);
     Task<Appointment?> GetByIdAsync(Guid id);
     Task AddAsync(Appointment appointment);
+    Task DeleteAsync(Appointment appointment);
+    Task UpdateAsync(Appointment appointment);
     Task SaveChangesAsync();
 }

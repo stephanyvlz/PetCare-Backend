@@ -21,6 +21,12 @@ public class UserService : IUserService
         var veterinarians = await _repo.GetByRolAsync(2);
         return veterinarians.Select(MapToDto).ToList();
     }
+    public async Task<List<UserDto>> GetVeterinariansByClinicAsync(Guid id_clinic)
+    {
+        // RolId 2 = veterinario según el seed
+        var veterinarians = await _repo.GetByClinicAndRolAsync(id_clinic, 2);
+        return veterinarians.Select(MapToDto).ToList();
+    }
 
     public async Task<UserDto> GetByIdAsync(Guid id)
     {
@@ -30,16 +36,29 @@ public class UserService : IUserService
         return MapToDto(user);
     }
 
-    public async Task<UserDto> UpdateAsync(Guid id, UpdateUserDto dto)
+    public async Task<UserDto> UpdateProfileAsync(Guid id, UpdateProfileDto dto)
     {
         var user = await _repo.GetByIdAsync(id)
             ?? throw new Exception("Usuario no encontrado");
+
         user.name = dto.name;
-        user.email = dto.email;
+        user.phone = dto.phone;
+        user.updated_at = DateTime.UtcNow;
+
+        await _repo.SaveChangesAsync();
+        return MapToDto(user);
+    }
+
+    public async Task<UserDto> AdminUpdateAsync(Guid id, AdminUpdateUserDto dto)
+    {
+        var user = await _repo.GetByIdAsync(id)
+            ?? throw new Exception("Usuario no encontrado");
+
+        user.name = dto.name;
         user.phone = dto.phone;
         user.id_clinic = dto.id_clinic;
-        user.updated_at = DateTime.UtcNow; 
-        await _repo.UpdateAsync(user);
+        user.updated_at = DateTime.UtcNow;
+
         await _repo.SaveChangesAsync();
         return MapToDto(user);
     }

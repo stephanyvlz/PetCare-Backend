@@ -42,6 +42,18 @@ public class AppointmentRepository : IAppointmentRepository
            .Include(c => c.veterinarian)
            .FirstOrDefaultAsync(c => c.id_appointment == id);
 
+    public Task DeleteAsync(Appointment appointment)
+    {
+        _db.Appointment.Remove(appointment);
+        return Task.CompletedTask;
+    }
+
+    public Task UpdateAsync(Appointment appointment)
+    {
+        _db.Appointment.Update(appointment);
+        return Task.CompletedTask;
+    }
+
     public async Task AddAsync(Appointment appointment) =>
         await _db.Appointment.AddAsync(appointment);
 

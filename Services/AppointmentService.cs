@@ -22,6 +22,13 @@ public class AppointmentService : IAppointmentService
         return appointments.Select(MapToDto).ToList();
     }
 
+    public async Task<AppointmentDto> GetByIdAsync(Guid id_appointment)
+    {
+        var appointment = await _repo.GetByIdAsync(id_appointment)
+            ?? throw new Exception("Cita no encontrada");
+        return MapToDto(appointment);
+    }
+
     public async Task<AppointmentDto> CreateAsync(CreateAppointmentDto dto)
     {
         var appointment = new Appointment
@@ -39,34 +46,72 @@ public class AppointmentService : IAppointmentService
         await _repo.AddAsync(appointment);
         await _repo.SaveChangesAsync();
 
-        var appointmentCreate = await _repo.GetByIdAsync(appointment.id_appointment)
+        var created = await _repo.GetByIdAsync(appointment.id_appointment)
             ?? throw new Exception("Error al crear la cita");
+        return MapToDto(created);
+    }
 
-        return MapToDto(appointmentCreate);
+    public async Task<AppointmentDto> UpdateAsync(Guid id_appointment, UpdateAppointmentDto dto)
+    {
+        var appointment = await _repo.GetByIdAsync(id_appointment)
+            ?? throw new Exception("Cita no encontrada");
+
+        // ✅ Solo se pueden editar citas pendientes
+        if (appointment.status != "pendiente")
+            throw new Exception("Solo se pueden modificar citas con estado 'pendiente'");
+
+        appointment.appointment_date = dto.appointment_date;
+        appointment.service = dto.service;
+        appointment.id_veterinarian = dto.id_veterinarian;
+
+        await _repo.UpdateAsync(appointment);
+        await _repo.SaveChangesAsync();
+
+        var updated = await _repo.GetByIdAsync(id_appointment)
+            ?? throw new Exception("Error al actualizar la cita");
+        return MapToDto(updated);
     }
 
     public async Task<AppointmentDto> ChangeStatusAsync(Guid id_appointment, string status)
     {
-        var StatusValidation = new[] { "pendiente", "atendida", "cancelada" };
+        var validStatuses = new[] { "pendiente", "atendida", "cancelada" };
 
-        if (!StatusValidation.Contains(status))
+        if (!validStatuses.Contains(status))
             throw new Exception("Estado inválido. Use: pendiente, atendida o cancelada");
 
         var appointment = await _repo.GetByIdAsync(id_appointment)
             ?? throw new Exception("Cita no encontrada");
 
+        if (appointment.status == "atendida" || appointment.status == "cancelada")
+            throw new Exception("No se puede cambiar el estado de una cita ya atendida o cancelada");
+
         appointment.status = status;
+        await _repo.UpdateAsync(appointment);
         await _repo.SaveChangesAsync();
 
-        return MapToDto(appointment);
-    }
-    public async Task<List<AppointmentDto>> GetByVeterinarianAsync(Guid id_veterinarian)
-    {
-        var Appointments = await _repo.GetByVeterinarianAsync(id_veterinarian);
-        return Appointments.Select(MapToDto).ToList();
+        var updated = await _repo.GetByIdAsync(id_appointment)
+            ?? throw new Exception("Error al actualizar estado");
+        return MapToDto(updated);
     }
 
-    // Mapeo reutilizable
+    public async Task<List<AppointmentDto>> GetByVeterinarinarianAsync(Guid id_veterinarian)
+    {
+        var appointments = await _repo.GetByVeterinarianAsync(id_veterinarian);
+        return appointments.Select(MapToDto).ToList();
+    }
+
+    public async Task DeleteAsync(Guid id_appointment)
+    {
+        var appointment = await _repo.GetByIdAsync(id_appointment)
+            ?? throw new Exception("Cita no encontrada");
+
+        if (appointment.status == "atendida")
+            throw new Exception("No se puede eliminar una cita que ya fue atendida");
+
+        await _repo.DeleteAsync(appointment);
+        await _repo.SaveChangesAsync();
+    }
+
     private static AppointmentDto MapToDto(Appointment c) => new(
         c.id_appointment,
         c.User.name,
@@ -77,29 +122,4 @@ public class AppointmentService : IAppointmentService
         c.cost,
         c.status
     );
-
-    Task<List<AppointmentDto>> IAppointmentService.GetAllAsync()
-    {
-        throw new NotImplementedException();
-    }
-
-    Task<List<AppointmentDto>> IAppointmentService.GetByUserAsync(Guid id_user)
-    {
-        throw new NotImplementedException();
-    }
-
-    Task<AppointmentDto> IAppointmentService.CreateAsync(CreateAppointmentDto dto)
-    {
-        throw new NotImplementedException();
-    }
-
-    Task<AppointmentDto> IAppointmentService.ChangeStatusAsync(Guid id_appointment, string status)
-    {
-        throw new NotImplementedException();
-    }
-
-    Task<List<AppointmentDto>> IAppointmentService.GetByVeterinarinarianAsync(Guid id_veterinarian)
-    {
-        throw new NotImplementedException();
-    }
 }

@@ -24,15 +24,22 @@ public record UserDto(
     Guid? id_clinic
 );
 
-public record UpdateUserDto(
+// Para que el usuario/veterinario edite su propio perfil
+public record UpdateProfileDto(
+    string name,
+    string email,
+    string password,
+    string? phone
+);
+
+// Para que el admin edite cualquier usuario (incluyendo clínica)
+public record AdminUpdateUserDto(
     string name,
     string email,
     string? phone,
-    string? Password,
+    string id_role,
     Guid? id_clinic
-
 );
-
 
 public record UserSessionDto(
     Guid id_user,
