@@ -49,19 +49,32 @@ public class UserService : IUserService
         return MapToDto(user);
     }
 
-    public async Task<UserDto> AdminUpdateAsync(Guid id, AdminUpdateUserDto dto)
+   public async Task<UserDto> AdminUpdateAsync(Guid id, AdminUpdateUserDto dto)
+{
+    var user = await _repo.GetByIdAsync(id)
+        ?? throw new Exception("Usuario no encontrado");
+
+    user.name = dto.name;
+    user.phone = dto.phone;
+    user.id_role = dto.id_role;
+    user.id_clinic = dto.id_clinic;
+    user.updated_at = DateTime.UtcNow;
+
+    if (dto.id_role == 2)
     {
-        var user = await _repo.GetByIdAsync(id)
-            ?? throw new Exception("Usuario no encontrado");
+        if (string.IsNullOrWhiteSpace(dto.schedule))
+            throw new Exception("El horario es obligatorio para el veterinario");
 
-        user.name = dto.name;
-        user.phone = dto.phone;
-        user.id_clinic = dto.id_clinic;
-        user.updated_at = DateTime.UtcNow;
-
-        await _repo.SaveChangesAsync();
-        return MapToDto(user);
+        user.schedule = dto.schedule;
     }
+    else
+    {
+        user.schedule = null; // ← limpia si no es veterinario
+    }
+
+    await _repo.SaveChangesAsync();
+    return MapToDto(user);
+}
 
     public async Task DeleteAsync(Guid id)
     {
@@ -72,5 +85,16 @@ public class UserService : IUserService
     }
 
     private static UserDto MapToDto(Models.Entities.User u) =>
-        new(u.id_user, u.name, u.email, u.id_role,u.phone, u.created_at, u.updated_at, u.id_clinic);
+    new(
+        u.id_user,
+        u.name,
+        u.email,
+        u.id_role,
+        u.phone,
+        u.schedule,
+        u.created_at,
+        u.updated_at,
+        u.id_clinic
+    );
+
 }

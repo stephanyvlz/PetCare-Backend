@@ -30,6 +30,7 @@ public class User
 
     public DateTime created_at { get; set; } = DateTime.UtcNow;
     public DateTime updated_at { get; set; } = DateTime.UtcNow;
+     public string? schedule { get; set; } 
     public Guid? id_clinic { get; set; }
     [ForeignKey(nameof(id_clinic))]
     public Clinic? Clinic { get; set; }

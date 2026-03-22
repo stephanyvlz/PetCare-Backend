@@ -4,9 +4,10 @@ public record RegisterDto(
     string name,
     string email,
     string Password,
+    string? phone,
     int id_role,
-    string? phone, //el teléfono es opcional, por eso el tipo string?  
-    Guid? id_clinic
+    Guid? id_clinic,
+    string? schedule
 );
 public record LoginDto(
     string email,
@@ -19,6 +20,7 @@ public record UserDto(
     string email, // correo electrónico del usuario unico
     int id_role, // rol del usuario (1: Admin, 2: Veterinario, 3: Cliente)
     string? phone,
+    string? schedule, 
     DateTime created_at, // fecha de creación del usuario 
     DateTime updated_at, // ultima actualización del usuario
     Guid? id_clinic
@@ -37,8 +39,9 @@ public record AdminUpdateUserDto(
     string name,
     string email,
     string? phone,
-    string id_role,
-    Guid? id_clinic
+    int id_role,
+    Guid? id_clinic,
+    string? schedule
 );
 
 public record UserSessionDto(
@@ -46,9 +49,9 @@ public record UserSessionDto(
     string name,
     string email,
     int id_role,
-    string? phone
+    string? phone,
+    string? schedule
 );
-
 
 public record LoginResponseDto(
     string Token

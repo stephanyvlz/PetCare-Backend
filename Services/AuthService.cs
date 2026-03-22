@@ -18,27 +18,38 @@ public class AuthService : IAuthService
     }
 
     public async Task<string> RegisterAsync(RegisterDto dto)
+{
+    if (await _repo.GetByEmailAsync(dto.email) is not null)
+        throw new Exception("El correo ya está registrado");
+
+    string? schedule = null;
+
+    if (dto.id_role == 2) // veterinario
     {
-        if (await _repo.GetByEmailAsync(dto.email) is not null)
-            throw new Exception("El correo ya está registrado");
+        if (string.IsNullOrWhiteSpace(dto.schedule))
+            throw new Exception("El horario es obligatorio para el veterinario");
 
-        var user = new User
-        {
-            name = dto.name,
-            email = dto.email,
-            Password = BCrypt.Net.BCrypt.HashPassword(dto.Password),
-            id_role = dto.id_role,
-            phone = dto.phone,
-            created_at = DateTime.UtcNow,  // ← esto evita el error 400
-            updated_at = DateTime.UtcNow,   // ← esto también
-            id_clinic = dto.id_clinic
-        };
-
-        await _repo.AddAsync(user);
-        await _repo.SaveChangesAsync();
-
-        return "Usuario registrado exitosamente";
+        schedule = dto.schedule;
     }
+
+    var user = new User
+    {
+        name = dto.name,
+        email = dto.email,
+        Password = BCrypt.Net.BCrypt.HashPassword(dto.Password),
+        id_role = dto.id_role,
+        phone = dto.phone,
+        created_at = DateTime.UtcNow,
+        updated_at = DateTime.UtcNow,
+        id_clinic = dto.id_clinic,
+        schedule = schedule
+    };
+
+    await _repo.AddAsync(user);
+    await _repo.SaveChangesAsync();
+
+    return "Usuario registrado exitosamente";
+}
 
 public async Task<LoginResponseDto> LoginAsync(LoginDto dto)
 {
@@ -49,14 +60,6 @@ public async Task<LoginResponseDto> LoginAsync(LoginDto dto)
         throw new Exception("Credenciales inválidas");
 
     var token = _jwt.GenerateToken(user);
-
-    var userDto = new UserSessionDto(
-        user.id_user,
-        user.name,
-        user.email,
-        user.id_role,
-        user.phone
-    );
 
     return new LoginResponseDto(token);
 }
