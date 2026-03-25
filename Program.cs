@@ -111,24 +111,22 @@ var version = System.Reflection.Assembly
     .GetName()
     .Version?.ToString() ?? "3.2.0";
 
-if (app.Environment.IsDevelopment())
-{
     app.MapOpenApi();
     app.MapScalarApiReference(options =>
     {
         options.Title = $"PetCare API v{version}";
         options.Theme = ScalarTheme.DeepSpace;
+	options.AddServer("https://api.petcare-app.online");
         options.AddPreferredSecuritySchemes("Bearer")
             .AddHttpAuthentication("Bearer", bearer =>
             {
                 bearer.Token = "";
             });
     });
-}
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
 app.UseCors("cors");
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapGet("/", () => Results.Redirect("/scalar/v1"));
