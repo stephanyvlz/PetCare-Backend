@@ -1,8 +1,8 @@
-﻿using Asp.Versioning;
+﻿// PetCare.API/Controllers/AppointmentController.cs
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PetCare.API.Models.DTOs;
-using PetCare.API.Models.Entities;
 using PetCare.API.Models.Responses;
 using PetCare.API.Services.Interfaces;
 using System.Security.Claims;
@@ -19,7 +19,6 @@ public class AppointmentController : ControllerBase
     public AppointmentController(IAppointmentService appointmentService) => _appointmentService = appointmentService;
 
     // GET api/v1/citas
-    // Solo admin ve todas las citas
     [HttpGet]
     [Authorize(Roles = "admin")]
     public async Task<IActionResult> GetAll()
@@ -38,7 +37,6 @@ public class AppointmentController : ControllerBase
     }
 
     // GET api/v1/citas/mias
-    // El cliente ve sus propias citas
     [HttpGet("mias")]
     [Authorize(Roles = "cliente")]
     public async Task<IActionResult> GetMyAppointments()
@@ -49,7 +47,6 @@ public class AppointmentController : ControllerBase
     }
 
     // GET api/v1/citas/mis-pacientes
-    // El veterinario ve sus citas asignadas
     [HttpGet("my-patients")]
     [Authorize(Roles = "veterinario")]
     public async Task<IActionResult> GetMyPatients()
@@ -59,6 +56,43 @@ public class AppointmentController : ControllerBase
         return Ok(ApiResponse<List<AppointmentDto>>.Ok(appointments));
     }
 
+    // ✅ NUEVO ENDPOINT - Obtener horarios disponibles
+    // GET api/v1/Appointments/available-slots?veterinarianId=xxx&date=2024-03-25
+    [HttpGet("available-slots")]
+    [Authorize(Roles = "admin,cliente")]
+    public async Task<IActionResult> GetAvailableSlots(
+        [FromQuery] Guid veterinarianId, 
+        [FromQuery] DateTime date)
+    {
+        try
+        {
+            var slots = await _appointmentService.GetAvailableSlotsAsync(veterinarianId, date);
+            return Ok(ApiResponse<List<string>>.Ok(slots, "Horarios disponibles"));
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ApiResponse<string>.Fail(ex.Message));
+        }
+    }
+// PetCare.API/Controllers/AppointmentController.cs
+// Agregar este endpoint
+
+// GET api/v1/Appointments/available-dates?veterinarianId=xxx
+[HttpGet("available-dates")]
+[Authorize(Roles = "admin,cliente")]
+public async Task<IActionResult> GetAvailableDates(
+    [FromQuery] Guid veterinarianId)
+{
+    try
+    {
+        var dates = await _appointmentService.GetAvailableDatesAsync(veterinarianId);
+        return Ok(ApiResponse<List<string>>.Ok(dates, "Fechas disponibles"));
+    }
+    catch (Exception ex)
+    {
+        return BadRequest(ApiResponse<string>.Fail(ex.Message));
+    }
+}
     // POST api/v1/citas
     [HttpPost]
     [Authorize(Roles = "cliente,admin")]
@@ -76,7 +110,8 @@ public class AppointmentController : ControllerBase
         var appointment = await _appointmentService.ChangeStatusAsync(id_appointment, dto.status);
         return Ok(ApiResponse<AppointmentDto>.Ok(appointment, "Estado actualizado"));
     }
-    //PATCH api/api/citas/{id} - solo pendientes
+    
+    //PUT api/api/citas/{id}
     [HttpPut("{id_appointment}")]
     [Authorize(Roles = "cliente, admin")]
     public async Task<IActionResult> Update(Guid id_appointment, [FromBody] UpdateAppointmentDto dto)
@@ -86,7 +121,6 @@ public class AppointmentController : ControllerBase
     }
 
     // DELETE api/v1/Appointments/{id}
-    // Admin: elimina físicamente | Cliente: solo puede cancelar (PATCH status)
     [HttpDelete("{id_appointment}")]
     [Authorize(Roles = "admin")]
     public async Task<IActionResult> Delete(Guid id_appointment)
@@ -94,7 +128,4 @@ public class AppointmentController : ControllerBase
         await _appointmentService.DeleteAsync(id_appointment);
         return Ok(ApiResponse<string>.Ok("Cita eliminada exitosamente"));
     }
-
-
-
 }

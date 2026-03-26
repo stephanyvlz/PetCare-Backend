@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿// PetCare.API/Repositories/AppointmentRepository.cs
+using Microsoft.EntityFrameworkCore;
 using PetCare.API.Data;
 using PetCare.API.Models.Entities;
 using PetCare.API.Repositories.Interfaces;
@@ -59,4 +60,33 @@ public class AppointmentRepository : IAppointmentRepository
 
     public Task SaveChangesAsync() =>
         _db.SaveChangesAsync();
+
+    // ✅ CORREGIDO - Convertir a UTC antes de comparar
+    public async Task<List<DateTime>> GetOccupiedSlotsAsync(Guid id_veterinarian, DateTime date)
+    {
+        var utcDate = date.ToUniversalTime().Date;
+        
+        return await _db.Appointment
+            .Where(a => a.id_veterinarian == id_veterinarian 
+                     && a.appointment_date.Date == utcDate
+                     && a.status != "cancelada")
+            .Select(a => a.appointment_date)
+            .ToListAsync();
+    }
+   
+    // ✅ CORREGIDO - Convertir a UTC antes de comparar
+    public async Task<List<DateTime>> GetOccupiedDatesAsync(Guid id_veterinarian, DateTime startDate, DateTime endDate)
+    {
+        var utcStart = startDate.ToUniversalTime().Date;
+        var utcEnd = endDate.ToUniversalTime().Date;
+        
+        return await _db.Appointment
+            .Where(a => a.id_veterinarian == id_veterinarian
+                     && a.appointment_date.Date >= utcStart
+                     && a.appointment_date.Date <= utcEnd
+                     && a.status != "cancelada")
+            .Select(a => a.appointment_date.Date)
+            .Distinct()
+            .ToListAsync();
+    }
 }

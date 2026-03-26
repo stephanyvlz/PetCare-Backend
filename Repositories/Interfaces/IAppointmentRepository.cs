@@ -12,4 +12,10 @@ public interface IAppointmentRepository
     Task DeleteAsync(Appointment appointment);
     Task UpdateAsync(Appointment appointment);
     Task SaveChangesAsync();
+
+
+
+    //nuevo  
+      Task<List<DateTime>> GetOccupiedSlotsAsync(Guid id_veterinarian, DateTime date);
+    Task<List<DateTime>> GetOccupiedDatesAsync(Guid id_veterinarian, DateTime startDate, DateTime endDate);
 }
