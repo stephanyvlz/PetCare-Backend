@@ -2797,47 +2797,24 @@
     ]
   },
   "packageFolders": {
-<<<<<<< Updated upstream
-    "C:\\Users\\Victus\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\steph\\.nuget\\packages\\": {},
->>>>>>> Stashed changes
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Alvaro\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "3.2.0",
     "restore": {
-<<<<<<< Updated upstream
-      "projectUniqueName": "C:\\Users\\Victus\\Downloads\\PetCare-Backend\\PetCare.API.csproj",
+      "projectUniqueName": "D:\\Alvaro\\Documents\\Proyecto VET\\PetCare-Backend\\PetCare.API.csproj",
       "projectName": "PetCare.API",
-      "projectPath": "C:\\Users\\Victus\\Downloads\\PetCare-Backend\\PetCare.API.csproj",
-      "packagesPath": "C:\\Users\\Victus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Victus\\Downloads\\PetCare-Backend\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\PetCare.API.csproj",
-      "projectName": "PetCare.API",
-      "projectPath": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\PetCare.API.csproj",
-      "packagesPath": "C:\\Users\\steph\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\obj\\",
->>>>>>> Stashed changes
+      "projectPath": "D:\\Alvaro\\Documents\\Proyecto VET\\PetCare-Backend\\PetCare.API.csproj",
+      "packagesPath": "C:\\Users\\Alvaro\\.nuget\\packages\\",
+      "outputPath": "D:\\Alvaro\\Documents\\Proyecto VET\\PetCare-Backend\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-<<<<<<< Updated upstream
-        "C:\\Users\\Victus\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\steph\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> Stashed changes
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Alvaro\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2926,11 +2903,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< Updated upstream
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200/PortableRuntimeIdentifierGraph.json",
-=======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
->>>>>>> Stashed changes
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
