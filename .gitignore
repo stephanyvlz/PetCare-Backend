@@ -484,6 +484,7 @@ $RECYCLE.BIN/
 # configuration sensitive
 appsettings.Development.json
 appsettings.Production.json
+appsettings.json
 
 # Build outputs
 bin/
