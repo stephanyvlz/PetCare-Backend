@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PetCare.API.Data;
@@ -11,9 +12,11 @@ using PetCare.API.Data;
 namespace PetCare.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260408200104_SeAñadioTablaDonaciones")]
+    partial class SeAñadioTablaDonaciones
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -135,14 +138,8 @@ namespace PetCare.API.Migrations
                     b.Property<DateTime>("created_at")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("donor_email")
-                        .HasColumnType("text");
-
                     b.Property<string>("donor_name")
                         .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("message")
                         .HasColumnType("text");
 
                     b.Property<string>("paypal_order_id")
@@ -177,10 +174,6 @@ namespace PetCare.API.Migrations
 
                     b.Property<string>("name")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
-
-                    b.Property<string>("species")
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 

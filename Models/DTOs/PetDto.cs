@@ -4,6 +4,7 @@ public record PetDto(
     Guid id_pet,
     string name,
     string breed,
+    string? species,
     decimal weight,
     int age,
     string user_name,
@@ -13,6 +14,7 @@ public record PetDto(
 public record CreatePetDto(
     string name,
     string breed,
+    string? species,
     decimal weight,
     int age
 );
@@ -20,6 +22,7 @@ public record CreatePetDto(
 public record UpdatePetDto(
     string name,
     string breed,
+    string? species,
     decimal weight,
     int age
 );

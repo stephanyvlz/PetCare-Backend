@@ -15,6 +15,9 @@ public class Pet
     [MaxLength(100)]
     public string breed { get; set; } = string.Empty;
 
+    [MaxLength(100)]
+    public string? species { get; set; }
+
     public decimal weight { get; set; }
     public int age { get; set; }
 

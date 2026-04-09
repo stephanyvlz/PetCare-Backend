@@ -2797,24 +2797,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Alvaro\\.nuget\\packages\\": {}
+    "C:\\Users\\steph\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "3.2.0",
     "restore": {
-      "projectUniqueName": "D:\\Alvaro\\Documents\\Proyecto VET\\PetCare-Backend\\PetCare.API.csproj",
+      "projectUniqueName": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\PetCare.API.csproj",
       "projectName": "PetCare.API",
-      "projectPath": "D:\\Alvaro\\Documents\\Proyecto VET\\PetCare-Backend\\PetCare.API.csproj",
-      "packagesPath": "C:\\Users\\Alvaro\\.nuget\\packages\\",
-      "outputPath": "D:\\Alvaro\\Documents\\Proyecto VET\\PetCare-Backend\\obj\\",
+      "projectPath": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\PetCare.API.csproj",
+      "packagesPath": "C:\\Users\\steph\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\steph\\OneDrive\\Documentos\\ProyectoVet\\PetCare.API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Alvaro\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\steph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

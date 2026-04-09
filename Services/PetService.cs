@@ -34,6 +34,7 @@ public class PetService : IPetService
         {
             name = dto.name,
             breed = dto.breed,
+            species = dto.species,
             weight = dto.weight,
             age = dto.age,
             id_user = id_user
@@ -55,6 +56,7 @@ public class PetService : IPetService
 
         pet.name = dto.name;
         pet.breed = dto.breed;
+        pet.species = dto.species;
         pet.weight = dto.weight;
         pet.age = dto.age;
 
@@ -79,6 +81,7 @@ public class PetService : IPetService
         p.id_pet,
         p.name,
         p.breed,
+        p.species,
         p.weight,
         p.age,
         p.user?.name ?? "",
