@@ -21,6 +21,7 @@ public class AppointmentRepository : IAppointmentRepository
 
     public Task<List<Appointment>> GetByUserAsync(Guid id_user) =>
         _db.Appointment
+           .Include(c => c.User)
            .Include(c => c.Pet)
            .Include(c => c.Clinic)
            .Include(c => c.veterinarian)
@@ -32,6 +33,7 @@ public class AppointmentRepository : IAppointmentRepository
            .Include(c => c.User)
            .Include(c => c.Pet)
            .Include(c => c.Clinic)
+           .Include(c => c.veterinarian)
            .Where(c => c.id_veterinarian == id_veterinarian)
            .ToListAsync();
 
