@@ -88,7 +88,8 @@ builder.Services.AddApiVersioning(opt =>
 
 builder.Services.AddControllers();
 builder.Services.AddAuthorization();
-
+// Program.cs - Agregar después de los otros servicios
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 //Cords
 builder.Services.AddCors(options =>

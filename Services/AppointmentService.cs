@@ -3,19 +3,33 @@ using PetCare.API.Models.DTOs;
 using PetCare.API.Models.Entities;
 using PetCare.API.Repositories.Interfaces;
 using PetCare.API.Services.Interfaces;
+using System.Text.RegularExpressions;
 
 namespace PetCare.API.Services;
 
 public class AppointmentService : IAppointmentService
 {
     private readonly IAppointmentRepository _repo;
+    private readonly IUserRepository _userRepository;
+    private readonly IClinicRepository _clinicRepository;
+    private readonly IEmailService _emailService;
     
     // Configuración de horarios
     private readonly TimeSpan WORK_START = new TimeSpan(9, 0, 0);    // 9:00 AM
     private readonly TimeSpan WORK_END = new TimeSpan(18, 0, 0);     // 6:00 PM
     private readonly int SLOT_DURATION_MINUTES = 30;                  // 30 minutos por cita
     
-    public AppointmentService(IAppointmentRepository repo) => _repo = repo;
+    public AppointmentService(
+        IAppointmentRepository repo,
+        IUserRepository userRepository,
+        IClinicRepository clinicRepository,
+        IEmailService emailService)
+    {
+        _repo = repo;
+        _userRepository = userRepository;
+        _clinicRepository = clinicRepository;
+        _emailService = emailService;
+    }
 
     public async Task<List<AppointmentDto>> GetAllAsync()
     {
@@ -41,6 +55,7 @@ public class AppointmentService : IAppointmentService
         // ✅ Convertir fecha a UTC
         var appointmentDate = dto.appointment_date.ToUniversalTime();
         
+        // ✅ Validar que el horario no esté ocupado
         var occupiedSlots = await _repo.GetOccupiedSlotsAsync(dto.id_veterinarian, appointmentDate);
         
         if (occupiedSlots.Any(slot => slot.TimeOfDay == appointmentDate.TimeOfDay))
@@ -48,6 +63,20 @@ public class AppointmentService : IAppointmentService
             throw new Exception("El horario seleccionado ya está ocupado. Por favor elige otro.");
         }
         
+        // ✅ Validar que está dentro del horario laboral
+        var timeOfDay = appointmentDate.TimeOfDay;
+        if (timeOfDay < WORK_START || timeOfDay >= WORK_END)
+        {
+            throw new Exception($"El horario debe estar entre {WORK_START:hh\\:mm} y {WORK_END:hh\\:mm}");
+        }
+        
+        // ✅ Validar que no sea fin de semana
+        if (appointmentDate.DayOfWeek == DayOfWeek.Saturday || appointmentDate.DayOfWeek == DayOfWeek.Sunday)
+        {
+            throw new Exception("No se pueden agendar citas en fines de semana");
+        }
+        
+        // ✅ Crear la cita
         var appointment = new Appointment
         {
             id_user = dto.id_user,
@@ -65,6 +94,32 @@ public class AppointmentService : IAppointmentService
 
         var created = await _repo.GetByIdAsync(appointment.id_appointment)
             ?? throw new Exception("Error al crear la cita");
+        
+        // ✅ ENVIAR EMAIL DE CONFIRMACIÓN
+        try
+        {
+            var user = await _userRepository.GetByIdAsync(dto.id_user);
+            var clinic = await _clinicRepository.GetByIdAsync(dto.id_clinic);
+            var veterinarian = await _userRepository.GetByIdAsync(dto.id_veterinarian);
+            
+            if (user != null && clinic != null)
+            {
+                await _emailService.SendAppointmentConfirmationAsync(
+                    user.email,
+                    user.name,
+                    appointmentDate,
+                    clinic.name,
+                    dto.service,
+                    veterinarian?.name ?? "Veterinario asignado"
+                );
+            }
+        }
+        catch (Exception ex)
+        {
+            // Solo logueamos el error, no fallamos la creación de la cita
+            Console.WriteLine($"Error enviando email de confirmación: {ex.Message}");
+        }
+        
         return MapToDto(created);
     }
 
@@ -101,6 +156,7 @@ public class AppointmentService : IAppointmentService
         
         while (current <= endDate)
         {
+            // Excluir fines de semana
             if (current.DayOfWeek != DayOfWeek.Saturday && current.DayOfWeek != DayOfWeek.Sunday)
             {
                 allDates.Add(current);
@@ -145,6 +201,31 @@ public class AppointmentService : IAppointmentService
 
         var updated = await _repo.GetByIdAsync(id_appointment)
             ?? throw new Exception("Error al actualizar estado");
+        
+        // ✅ Enviar email de cancelación si aplica
+        if (status == "cancelada")
+        {
+            try
+            {
+                var user = await _userRepository.GetByIdAsync(appointment.id_user);
+                var clinic = await _clinicRepository.GetByIdAsync(appointment.id_clinic);
+                
+                if (user != null && clinic != null)
+                {
+                    await _emailService.SendAppointmentCancellationAsync(
+                        user.email,
+                        user.name,
+                        appointment.appointment_date,
+                        clinic.name
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error enviando email de cancelación: {ex.Message}");
+            }
+        }
+        
         return MapToDto(updated);
     }
 
