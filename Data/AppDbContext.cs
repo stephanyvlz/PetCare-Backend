@@ -17,39 +17,46 @@ public class AppDbContext : DbContext
     public DbSet<Donation> Donations => Set<Donation>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        base.OnModelCreating(modelBuilder);
+{
+    base.OnModelCreating(modelBuilder);
 
-        // Correo único
-        modelBuilder.Entity<User>()
-            .HasIndex(u => u.email)
-            .IsUnique();
+    modelBuilder.Entity<User>()
+        .HasIndex(u => u.email)
+        .IsUnique();
 
-        // Cita → Usuario (cliente)
-        modelBuilder.Entity<Appointment>()
-            .HasOne(c => c.User)
-            .WithMany(u => u.Appointments)
-            .HasForeignKey(c => c.id_user)
-            .OnDelete(DeleteBehavior.Restrict);
+    //  User → Appointment (cliente)
+    modelBuilder.Entity<Appointment>()
+        .HasOne(a => a.User)
+        .WithMany(u => u.Appointments)
+        .HasForeignKey(a => a.id_user)
+        .OnDelete(DeleteBehavior.Cascade);
 
-        // Cita → Veterinario (también es Usuario)
-        modelBuilder.Entity<Appointment>()
-            .HasOne(c => c.veterinarian)
-            .WithMany()
-            .HasForeignKey(c => c.id_veterinarian)
-            .OnDelete(DeleteBehavior.Restrict);
+    //  User → Appointment (veterinario)
+    modelBuilder.Entity<Appointment>()
+        .HasOne(a => a.veterinarian)
+        .WithMany()
+        .HasForeignKey(a => a.id_veterinarian)
+        .OnDelete(DeleteBehavior.Cascade);
 
-        // Consulta → Cita (1 a 1)
-        modelBuilder.Entity<Consultation>()
-            .HasOne(c => c.Appointments)
-            .WithOne(c => c.Consultations)
-            .HasForeignKey<Consultation>(c => c.id_appointment);
+    //  Appointment → Consultation (1:1)
+    modelBuilder.Entity<Consultation>()
+        .HasOne(c => c.Appointments)
+        .WithOne(a => a.Consultations)
+        .HasForeignKey<Consultation>(c => c.id_appointment)
+        .OnDelete(DeleteBehavior.Cascade);
 
-        // Roles iniciales
-        modelBuilder.Entity<Role>().HasData(
-            new Role { id_role = 1, role_name = "admin" },
-            new Role { id_role = 2, role_name = "veterinario" },
-            new Role { id_role = 3, role_name = "cliente" }
-        );
-    }
+    //  Consultation → Treatment (1:N)
+    modelBuilder.Entity<Treatment>()
+        .HasOne(t => t.Consultations)
+        .WithMany(c => c.Treatments)
+        .HasForeignKey(t => t.id_consultation)
+        .OnDelete(DeleteBehavior.Cascade);
+
+    // Roles iniciales
+    modelBuilder.Entity<Role>().HasData(
+        new Role { id_role = 1, role_name = "admin" },
+        new Role { id_role = 2, role_name = "veterinario" },
+        new Role { id_role = 3, role_name = "cliente" }
+    );
+}
 }

@@ -330,13 +330,13 @@ namespace PetCare.API.Migrations
                     b.HasOne("PetCare.API.Models.Entities.User", "User")
                         .WithMany("Appointments")
                         .HasForeignKey("id_user")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("PetCare.API.Models.Entities.User", "veterinarian")
                         .WithMany()
                         .HasForeignKey("id_veterinarian")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Clinic");
