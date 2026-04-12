@@ -23,7 +23,6 @@ public class AppointmentController : ControllerBase
         _userService = userService;
     }
 
-
     // GET api/v1/citas
     [HttpGet]
     [Authorize(Roles = "admin")]
@@ -42,10 +41,10 @@ public class AppointmentController : ControllerBase
         {
             var id_admin = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
             var admin = await _userService.GetByIdAsync(id_admin);
- 
+
             if (admin?.id_clinic == null)
                 return BadRequest(ApiResponse<string>.Fail("No tienes una clínica asignada"));
- 
+
             var appointments = await _appointmentService.GetByClinicAsync(admin.id_clinic.Value);
             return Ok(ApiResponse<List<AppointmentDto>>.Ok(appointments));
         }
@@ -82,6 +81,27 @@ public class AppointmentController : ControllerBase
         var id_veterinarian = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
         var appointments = await _appointmentService.GetByVeterinarinarianAsync(id_veterinarian);
         return Ok(ApiResponse<List<AppointmentDto>>.Ok(appointments));
+    }
+
+    // PATCH api/v1/Appointments/cancelar/{id}  — cliente cancela su propia cita
+    [HttpPatch("cancelar/{id_appointment}")]
+    [Authorize(Roles = "cliente")]
+    public async Task<IActionResult> CancelMyAppointment(Guid id_appointment)
+    {
+        try
+        {
+            var id_user = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+            var appointment = await _appointmentService.CancelMyAppointmentAsync(id_appointment, id_user);
+            return Ok(ApiResponse<AppointmentDto>.Ok(appointment, "Cita cancelada exitosamente"));
+        }
+        catch (UnauthorizedAccessException ex)
+        {
+            return Forbid();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ApiResponse<string>.Fail(ex.Message));
+        }
     }
 
     // ✅ NUEVO ENDPOINT - Obtener horarios disponibles

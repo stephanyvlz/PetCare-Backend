@@ -95,6 +95,29 @@ public class AppointmentService : IAppointmentService
         return MapToDto(updated);
     }
 
+    public async Task<AppointmentDto> CancelMyAppointmentAsync(Guid id_appointment, Guid id_user)
+    {
+        var appointment = await _repo.GetByIdAsync(id_appointment)
+            ?? throw new Exception("Cita no encontrada");
+
+        if (appointment.id_user != id_user)
+            throw new UnauthorizedAccessException("No puedes cancelar una cita que no es tuya");
+
+        if (appointment.status == "atendida")
+            throw new Exception("No se puede cancelar una cita que ya fue atendida");
+
+        if (appointment.status == "cancelada")
+            throw new Exception("Esta cita ya está cancelada");
+
+        appointment.status = "cancelada";
+        await _repo.UpdateAsync(appointment);
+        await _repo.SaveChangesAsync();
+
+        var updated = await _repo.GetByIdAsync(id_appointment)
+            ?? throw new Exception("Error al cancelar la cita");
+        return MapToDto(updated);
+    }
+
     public async Task<List<string>> GetAvailableDatesAsync(Guid id_veterinarian)
     {
         var startDate = DateTime.UtcNow.Date;
@@ -164,10 +187,7 @@ public class AppointmentService : IAppointmentService
     {
         var appointment = await _repo.GetByIdAsync(id_appointment)
             ?? throw new Exception("Cita no encontrada");
-
-        if (appointment.status == "atendida")
-            throw new Exception("No se puede eliminar una cita que ya fue atendida");
-
+ 
         await _repo.DeleteAsync(appointment);
         await _repo.SaveChangesAsync();
     }
