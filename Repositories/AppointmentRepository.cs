@@ -37,6 +37,16 @@ public class AppointmentRepository : IAppointmentRepository
            .Include(c => c.veterinarian)
            .ToListAsync();
 
+    public Task<List<Appointment>> GetByClinicAsync(Guid id_clinic) =>
+ _db.Appointment
+    .Include(c => c.User)
+    .Include(c => c.Pet)
+    .Include(c => c.Clinic)
+    .Include(c => c.veterinarian)
+    .Where(c => c.id_clinic == id_clinic)
+    .OrderByDescending(c => c.appointment_date)
+    .ToListAsync();
+
     public Task<Appointment?> GetByIdAsync(Guid id) =>
         _db.Appointment
            .Include(c => c.User)
@@ -67,21 +77,21 @@ public class AppointmentRepository : IAppointmentRepository
     public async Task<List<DateTime>> GetOccupiedSlotsAsync(Guid id_veterinarian, DateTime date)
     {
         var utcDate = date.ToUniversalTime().Date;
-        
+
         return await _db.Appointment
-            .Where(a => a.id_veterinarian == id_veterinarian 
+            .Where(a => a.id_veterinarian == id_veterinarian
                      && a.appointment_date.Date == utcDate
                      && a.status != "cancelada")
             .Select(a => a.appointment_date)
             .ToListAsync();
     }
-   
+
     // ✅ CORREGIDO - Convertir a UTC antes de comparar
     public async Task<List<DateTime>> GetOccupiedDatesAsync(Guid id_veterinarian, DateTime startDate, DateTime endDate)
     {
         var utcStart = startDate.ToUniversalTime().Date;
         var utcEnd = endDate.ToUniversalTime().Date;
-        
+
         return await _db.Appointment
             .Where(a => a.id_veterinarian == id_veterinarian
                      && a.appointment_date.Date >= utcStart

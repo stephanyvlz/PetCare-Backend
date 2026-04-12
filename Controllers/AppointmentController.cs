@@ -16,7 +16,13 @@ namespace PetCare.API.Controllers;
 public class AppointmentController : ControllerBase
 {
     private readonly IAppointmentService _appointmentService;
-    public AppointmentController(IAppointmentService appointmentService) => _appointmentService = appointmentService;
+    private readonly IUserService _userService;
+    public AppointmentController(IAppointmentService appointmentService, IUserService userService)
+    {
+        _appointmentService = appointmentService;
+        _userService = userService;
+    }
+
 
     // GET api/v1/citas
     [HttpGet]
@@ -25,6 +31,28 @@ public class AppointmentController : ControllerBase
     {
         var appointments = await _appointmentService.GetAllAsync();
         return Ok(ApiResponse<List<AppointmentDto>>.Ok(appointments));
+    }
+
+    // GET api/v1/Appointments/mi-clinica — admin ve citas de su clínica
+    [HttpGet("mi-clinica")]
+    [Authorize(Roles = "admin")]
+    public async Task<IActionResult> GetByMyClinic()
+    {
+        try
+        {
+            var id_admin = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
+            var admin = await _userService.GetByIdAsync(id_admin);
+ 
+            if (admin?.id_clinic == null)
+                return BadRequest(ApiResponse<string>.Fail("No tienes una clínica asignada"));
+ 
+            var appointments = await _appointmentService.GetByClinicAsync(admin.id_clinic.Value);
+            return Ok(ApiResponse<List<AppointmentDto>>.Ok(appointments));
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ApiResponse<string>.Fail(ex.Message));
+        }
     }
 
     //GET api/v1/citas/{id}
@@ -61,7 +89,7 @@ public class AppointmentController : ControllerBase
     [HttpGet("available-slots")]
     [Authorize(Roles = "admin,cliente")]
     public async Task<IActionResult> GetAvailableSlots(
-        [FromQuery] Guid veterinarianId, 
+        [FromQuery] Guid veterinarianId,
         [FromQuery] DateTime date)
     {
         try
@@ -74,25 +102,25 @@ public class AppointmentController : ControllerBase
             return BadRequest(ApiResponse<string>.Fail(ex.Message));
         }
     }
-// PetCare.API/Controllers/AppointmentController.cs
-// Agregar este endpoint
+    // PetCare.API/Controllers/AppointmentController.cs
+    // Agregar este endpoint
 
-// GET api/v1/Appointments/available-dates?veterinarianId=xxx
-[HttpGet("available-dates")]
-[Authorize(Roles = "admin,cliente")]
-public async Task<IActionResult> GetAvailableDates(
-    [FromQuery] Guid veterinarianId)
-{
-    try
+    // GET api/v1/Appointments/available-dates?veterinarianId=xxx
+    [HttpGet("available-dates")]
+    [Authorize(Roles = "admin,cliente")]
+    public async Task<IActionResult> GetAvailableDates(
+        [FromQuery] Guid veterinarianId)
     {
-        var dates = await _appointmentService.GetAvailableDatesAsync(veterinarianId);
-        return Ok(ApiResponse<List<string>>.Ok(dates, "Fechas disponibles"));
+        try
+        {
+            var dates = await _appointmentService.GetAvailableDatesAsync(veterinarianId);
+            return Ok(ApiResponse<List<string>>.Ok(dates, "Fechas disponibles"));
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ApiResponse<string>.Fail(ex.Message));
+        }
     }
-    catch (Exception ex)
-    {
-        return BadRequest(ApiResponse<string>.Fail(ex.Message));
-    }
-}
     // POST api/v1/citas
     [HttpPost]
     [Authorize(Roles = "cliente,admin")]
@@ -110,7 +138,7 @@ public async Task<IActionResult> GetAvailableDates(
         var appointment = await _appointmentService.ChangeStatusAsync(id_appointment, dto.status);
         return Ok(ApiResponse<AppointmentDto>.Ok(appointment, "Estado actualizado"));
     }
-    
+
     //PUT api/api/citas/{id}
     [HttpPut("{id_appointment}")]
     [Authorize(Roles = "cliente, admin")]

@@ -36,6 +36,12 @@ public class AppointmentService : IAppointmentService
         return MapToDto(appointment);
     }
 
+    public async Task<List<AppointmentDto>> GetByClinicAsync(Guid id_clinic)
+    {
+        var appointments = await _repo.GetByClinicAsync(id_clinic);
+        return appointments.Select(MapToDto).ToList();
+    }
+
     public async Task<AppointmentDto> CreateAsync(CreateAppointmentDto dto)
     {
         // ✅ Convertir fecha a UTC
