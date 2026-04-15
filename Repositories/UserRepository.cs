@@ -54,4 +54,16 @@ public class UserRepository : IUserRepository
 
     public Task SaveChangesAsync() =>
         _db.SaveChangesAsync();
+
+    public async Task AddResetTokenAsync(PasswordResetToken token)
+    {
+        await _db.PasswordResetTokens.AddAsync(token);
+    }
+
+    public async Task<PasswordResetToken?> GetResetTokenAsync(string token)
+    {
+        return await _db.PasswordResetTokens
+            .Include(t => t.User)
+            .FirstOrDefaultAsync(t => t.Token == token);
+    }
 }

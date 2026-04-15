@@ -15,6 +15,7 @@ public class AppDbContext : DbContext
     public DbSet<Consultation> Consultation => Set<Consultation>();
     public DbSet<Treatment> Treatment => Set<Treatment>();
     public DbSet<Donation> Donations => Set<Donation>();
+    public DbSet<PasswordResetToken> PasswordResetTokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
 {

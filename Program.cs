@@ -69,6 +69,7 @@ builder.Services.AddScoped<IConsultationService, ConsultationService>();
 builder.Services.AddScoped<ITreatmentService, TreatmentService>();
 builder.Services.AddScoped<JwtHelper>();
 
+
 // ── Donaciones + PayPal ───────────────────────────────── 
 builder.Services.AddHttpClient<DonationService>();
 builder.Services.AddScoped<IDonationService, DonationService>();

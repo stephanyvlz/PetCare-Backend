@@ -33,4 +33,18 @@ public async Task<IActionResult> Login([FromBody] LoginDto dto)
         )
     );
 }
+
+    [HttpPost("request-reset")]
+    public async Task<IActionResult> RequestReset([FromBody] string email)
+    {
+        await _authService.RequestPasswordResetAsync(email);
+        return Ok("Si el correo existe, se enviaron instrucciones");
+    }
+
+    [HttpPost("reset-password")]
+    public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDto dto)
+    {
+        await _authService.ResetPasswordAsync(dto.Token, dto.NewPassword);
+        return Ok("Contraseña actualizada");
+    }
 }
