@@ -57,6 +57,11 @@ public record LoginResponseDto(
     string Token
 );
 
+public class RequestResetDto
+{
+    public string Email { get; set; } = string.Empty;
+}
+
 public class ResetPasswordDto
 {
     public string Token { get; set; } = string.Empty;

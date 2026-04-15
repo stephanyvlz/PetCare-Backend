@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using Microsoft.AspNetCore.WebUtilities;
 using PetCare.API.Helpers;
 using PetCare.API.Models.DTOs;
 using PetCare.API.Models.Entities;
@@ -75,7 +76,6 @@ public async Task RequestPasswordResetAsync(string email)
     // No revelar si existe o no
     if (user == null) return;
 
-    // Generar token seguro
     var token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
 
     var resetToken = new PasswordResetToken
@@ -88,10 +88,16 @@ public async Task RequestPasswordResetAsync(string email)
     await _repo.AddResetTokenAsync(resetToken);
     await _repo.SaveChangesAsync();
 
-    var link = $"https://tusitio.com/reset-password?token={token}";
+    Console.WriteLine($"-----GUARDANDO TOKEN: {token}");
 
+    var link = $"http://localhost:4200/reset-password?token={Uri.EscapeDataString(token)}";
+
+     await _emailService.SendPasswordResetAsync(
+        user.email,
+        user.name,
+        link
+    );
 }
-
 
 public async Task ResetPasswordAsync(string token, string newPassword)
 {

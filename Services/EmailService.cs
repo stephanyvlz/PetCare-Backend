@@ -134,8 +134,6 @@ public class EmailService : IEmailService
         await smtp.DisconnectAsync(true);
     }
 
-
-
     public async Task SendPasswordResetAsync(
     string toEmail,
     string userName,
@@ -150,7 +148,7 @@ public class EmailService : IEmailService
     var message = new MimeMessage();
     message.From.Add(new MailboxAddress(fromName, fromEmail));
     message.To.Add(new MailboxAddress(userName, toEmail));
-    message.Subject = "🔐 Restablece tu contraseña";
+    message.Subject = "Restablece tu contraseña";
 
     message.Body = new TextPart("html")
     {
@@ -168,7 +166,7 @@ public class EmailService : IEmailService
 
                   <!-- Header -->
                   <tr>
-                    <td style="background:#C0392B;padding:28px 32px;text-align:center;">
+                    <td style="background:#4A3728;padding:28px 32px;text-align:center;">
                       <h1 style="margin:0;color:#fff;font-size:22px;">
                         Restablecer contraseña
                       </h1>
@@ -228,6 +226,10 @@ public class EmailService : IEmailService
     };
 
     using var smtp = new SmtpClient();
+
+  //  SOLUCIÓN TEMPORAL
+    smtp.ServerCertificateValidationCallback = (s, c, h, e) => true;
+
     await smtp.ConnectAsync(smtpHost, smtpPort, SecureSocketOptions.StartTls);
     await smtp.AuthenticateAsync(fromEmail, appPassword);
     await smtp.SendAsync(message);

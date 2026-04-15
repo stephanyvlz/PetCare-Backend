@@ -15,4 +15,6 @@ public interface IUserRepository
     Task SaveChangesAsync();
     Task AddResetTokenAsync(PasswordResetToken token);
     Task<PasswordResetToken?> GetResetTokenAsync(string token);
+
+    
 }
