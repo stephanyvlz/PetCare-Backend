@@ -12,12 +12,6 @@ public class AuthService : IAuthService
     private readonly IUserRepository _repo;
     private readonly JwtHelper _jwt;
 
-    public AuthService(IUserRepository repo, JwtHelper jwt)
-    {
-        _repo = repo;
-        _jwt = jwt;
-    }
-
     private readonly IEmailService _emailService;
 
     public AuthService(IUserRepository repo, JwtHelper jwt, IEmailService emailService)
@@ -73,6 +67,7 @@ public async Task<LoginResponseDto> LoginAsync(LoginDto dto)
 
     return new LoginResponseDto(token);
 }
+
 public async Task RequestPasswordResetAsync(string email)
 {
     var user = await _repo.GetByEmailAsync(email);
@@ -93,17 +88,11 @@ public async Task RequestPasswordResetAsync(string email)
     await _repo.AddResetTokenAsync(resetToken);
     await _repo.SaveChangesAsync();
 
-    var link = $"https://PetCare.com/reset-password?token={token}";
+    var link = $"https://tusitio.com/reset-password?token={token}";
 
-    var body = $@"
-        <h2>Restablecer contraseña</h2>
-        <p>Haz clic en el siguiente enlace:</p>
-        <a href='{link}'>Restablecer contraseña</a>
-        <p>Este enlace expira en 30 minutos.</p>
-    ";
-
-    await _emailService.SendAsync(user.email, "Recuperación de contraseña", body);
 }
+
+
 public async Task ResetPasswordAsync(string token, string newPassword)
 {
     var resetToken = await _repo.GetResetTokenAsync(token);
