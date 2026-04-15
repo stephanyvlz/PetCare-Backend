@@ -15,12 +15,15 @@ public class AuthService : IAuthService
 
     private readonly IEmailService _emailService;
 
-    public AuthService(IUserRepository repo, JwtHelper jwt, IEmailService emailService)
-    {
-        _repo = repo;
-        _jwt = jwt;
-        _emailService = emailService;
-    }
+    private readonly ILogService _log;
+
+        public AuthService(IUserRepository repo, JwtHelper jwt, IEmailService emailService, ILogService log)
+        {
+            _repo = repo;
+            _jwt = jwt;
+            _emailService = emailService;
+            _log = log;
+        }
 
     public async Task<string> RegisterAsync(RegisterDto dto)
 {
@@ -56,63 +59,119 @@ public class AuthService : IAuthService
     return "Usuario registrado exitosamente";
 }
 
-public async Task<LoginResponseDto> LoginAsync(LoginDto dto)
-{
-    var user = await _repo.GetByEmailAsync(dto.email)
-        ?? throw new Exception("Credenciales inválidas");
+   public async Task<LoginResponseDto> LoginAsync(LoginDto dto)
+        {
+            var user = await _repo.GetByEmailAsync(dto.email);
 
-    if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password))
-        throw new Exception("Credenciales inválidas");
+            if (user == null)
+            {
+                try
+                {
+                    await _log.LogError($"Login fallido: usuario no existe ({dto.email})");
+                    await _repo.SaveChangesAsync();
+                }
+                catch { /* no dejes que el log rompa el flujo */ }
 
-    var token = _jwt.GenerateToken(user);
+                throw new Exception("Credenciales inválidas");
+            }
 
-    return new LoginResponseDto(token);
-}
+            if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password))
+            {
+                try
+                {
+                    await _log.LogError($"Login fallido: contraseña incorrecta ({dto.email})", user.id_user.ToString());
+                    await _repo.SaveChangesAsync();
+                }
+                catch { }
 
-public async Task RequestPasswordResetAsync(string email)
-{
-    var user = await _repo.GetByEmailAsync(email);
+                throw new Exception("Credenciales inválidas");
+            }
 
-    // No revelar si existe o no
-    if (user == null) return;
+            var token = _jwt.GenerateToken(user);
 
-    var token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
+            await _log.LogInfo($"Login exitoso: {user.email}", user.id_user.ToString());
+            await _repo.SaveChangesAsync();
 
-    var resetToken = new PasswordResetToken
+            return new LoginResponseDto(token);
+        }
+        
+    public async Task RequestPasswordResetAsync(string email)
     {
-        UserId = user.id_user,
-        Token = token,
-        Expiration = DateTime.UtcNow.AddMinutes(30)
-    };
+        try
+        {
+            await _log.LogInfo($"Solicitud de recuperación de contraseña: {email}");
+            await _repo.SaveChangesAsync();
 
-    await _repo.AddResetTokenAsync(resetToken);
-    await _repo.SaveChangesAsync();
+            var user = await _repo.GetByEmailAsync(email);
 
-    Console.WriteLine($"-----GUARDANDO TOKEN: {token}");
+            if (user == null)
+            {
+                await _log.LogInfo($"Password reset solicitado para email no existente: {email}");
+                await _repo.SaveChangesAsync();
+                return;
+            }
 
-    var link = $"http://localhost:4200/reset-password?token={Uri.EscapeDataString(token)}";
+            var token = Convert.ToBase64String(RandomNumberGenerator.GetBytes(64));
 
-     await _emailService.SendPasswordResetAsync(
-        user.email,
-        user.name,
-        link
-    );
-}
+            var resetToken = new PasswordResetToken
+            {
+                UserId = user.id_user,
+                Token = token,
+                Expiration = DateTime.UtcNow.AddMinutes(30)
+            };
+
+            await _repo.AddResetTokenAsync(resetToken);
+            await _repo.SaveChangesAsync();
+
+            var link = $"http://localhost:4200/reset-password?token={Uri.EscapeDataString(token)}";
+
+            await _emailService.SendPasswordResetAsync(user.email, user.name, link);
+
+            await _log.LogInfo(
+                $"Token de recuperación generado y enviado: {user.email}",
+                user.id_user.ToString()
+            );
+
+            await _repo.SaveChangesAsync();
+        }
+        catch (Exception ex)
+        {
+            await _log.LogError($"Error en RequestPasswordReset: {ex.Message}");
+            await _repo.SaveChangesAsync();
+            throw;
+        }
+    }
 
 public async Task ResetPasswordAsync(string token, string newPassword)
 {
-    var resetToken = await _repo.GetResetTokenAsync(token);
+    try
+    {
+        var resetToken = await _repo.GetResetTokenAsync(token);
 
-    if (resetToken == null || resetToken.IsUsed || resetToken.Expiration < DateTime.UtcNow)
-        throw new Exception("Token inválido o expirado");
+        if (resetToken == null || resetToken.IsUsed || resetToken.Expiration < DateTime.UtcNow)
+        {
+            await _log.LogError("Intento de reset con token inválido o expirado");
+            await _repo.SaveChangesAsync();
 
-    var user = resetToken.User;
+            throw new Exception("Token inválido o expirado");
+        }
 
-    user.Password = BCrypt.Net.BCrypt.HashPassword(newPassword);
-    user.updated_at = DateTime.UtcNow;
+        var user = resetToken.User;
 
-    resetToken.IsUsed = true;
+        user.Password = BCrypt.Net.BCrypt.HashPassword(newPassword);
+        user.updated_at = DateTime.UtcNow;
 
-    await _repo.SaveChangesAsync();
+        resetToken.IsUsed = true;
+
+        await _log.LogInfo("Contraseña actualizada correctamente", user.id_user.ToString());
+
+        await _repo.SaveChangesAsync();
+    }
+    catch (Exception ex)
+    {
+        await _log.LogError($"Error en ResetPassword: {ex.Message}");
+        await _repo.SaveChangesAsync();
+        throw;
+    }
 }
 }

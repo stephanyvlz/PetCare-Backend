@@ -7,7 +7,13 @@ namespace PetCare.API.Services;
 public class UserService : IUserService
 {
     private readonly IUserRepository _repo;
-    public UserService(IUserRepository repo) => _repo = repo;
+    private readonly ILogService _log;
+
+    public UserService(IUserRepository repo, ILogService log)
+    {
+        _repo = repo;
+        _log = log;
+    }
 
     public async Task<List<UserDto>> GetAllAsync()
     {
@@ -30,51 +36,95 @@ public class UserService : IUserService
     }
 
     public async Task<UserDto> GetByIdAsync(Guid id)
-    {
-        var user = await _repo.GetByIdAsync(id)
-            ?? throw new Exception("Usuario no encontrado");
+{
+    var user = await _repo.GetByIdAsync(id);
 
-        return MapToDto(user);
+    if (user == null)
+    {
+        await _log.LogError($"Usuario no encontrado: {id}");
+        await _repo.SaveChangesAsync();
+
+        throw new Exception("Usuario no encontrado");
     }
+
+    return MapToDto(user);
+}
 
     public async Task<UserDto> UpdateProfileAsync(Guid id, UpdateProfileDto dto)
-    {
-        var user = await _repo.GetByIdAsync(id)
-            ?? throw new Exception("Usuario no encontrado");
+        {
+            try
+            {
+                var user = await _repo.GetByIdAsync(id)
+                    ?? throw new Exception("Usuario no encontrado");
 
-        user.name = dto.name;
-        user.phone = dto.phone;
-        user.updated_at = DateTime.UtcNow;
+                user.name = dto.name;
+                user.phone = dto.phone;
+                user.updated_at = DateTime.UtcNow;
 
-        await _repo.SaveChangesAsync();
-        return MapToDto(user);
-    }
+                await _log.LogInfo("Perfil actualizado", user.id_user.ToString());
+
+                await _repo.SaveChangesAsync();
+
+                return MapToDto(user);
+            }
+            catch (Exception ex)
+            {
+                await _log.LogError($"Error al actualizar perfil: {ex.Message}");
+                await _repo.SaveChangesAsync();
+                throw;
+            }
+        }
 
     public async Task<UserDto> AdminUpdateAsync(Guid id, AdminUpdateUserDto dto)
     {
-        var user = await _repo.GetByIdAsync(id)
-            ?? throw new Exception("Usuario no encontrado");
-
-        user.name = dto.name;
-        user.phone = dto.phone;
-        user.id_role = dto.id_role;
-        user.id_clinic = dto.id_clinic;
-        user.updated_at = DateTime.UtcNow;
-
-        if (dto.id_role == 2)
+        try
         {
-            if (string.IsNullOrWhiteSpace(dto.schedule))
-                throw new Exception("El horario es obligatorio para el veterinario");
+            var user = await _repo.GetByIdAsync(id)
+                ?? throw new Exception("Usuario no encontrado");
 
-            user.schedule = dto.schedule;
+            var oldRole = user.id_role;
+            var oldClinic = user.id_clinic;
+
+            user.name = dto.name;
+            user.phone = dto.phone;
+            user.id_role = dto.id_role;
+            user.id_clinic = dto.id_clinic;
+            user.updated_at = DateTime.UtcNow;
+
+            if (dto.id_role == 2)
+            {
+                if (string.IsNullOrWhiteSpace(dto.schedule))
+                {
+                    await _log.LogError("AdminUpdate fallido: veterinario sin horario");
+                    await _repo.SaveChangesAsync();
+
+                    throw new Exception("El horario es obligatorio para el veterinario");
+                }
+
+                user.schedule = dto.schedule;
+            }
+            else
+            {
+                user.schedule = null;
+            }
+
+            await _repo.SaveChangesAsync();
+
+            await _log.LogInfo(
+                $"Admin actualizó usuario. Rol: {oldRole} → {dto.id_role}, Clínica: {oldClinic} → {dto.id_clinic}",
+                user.id_user.ToString()
+            );
+
+            await _repo.SaveChangesAsync();
+
+            return MapToDto(user);
         }
-        else
+        catch (Exception ex)
         {
-            user.schedule = null; // limpia si no es veterinario
+            await _log.LogError($"Error en AdminUpdate: {ex.Message}");
+            await _repo.SaveChangesAsync();
+            throw;
         }
-
-        await _repo.SaveChangesAsync();
-        return MapToDto(user);
     }
 
     public async Task DeleteAsync(Guid id)

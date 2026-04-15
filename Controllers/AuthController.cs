@@ -24,14 +24,16 @@ public class AuthController : ControllerBase
 [HttpPost("login")]
 public async Task<IActionResult> Login([FromBody] LoginDto dto)
 {
-    var response = await _authService.LoginAsync(dto);
+    try
+    {
+        var response = await _authService.LoginAsync(dto);
 
-    return Ok(
-        ApiResponse<LoginResponseDto>.Ok(
-            response,
-            "Login exitoso"
-        )
-    );
+        return Ok(ApiResponse<LoginResponseDto>.Ok(response, "Login exitoso"));
+    }
+    catch (Exception ex)
+    {
+        return Unauthorized(ApiResponse<string>.Fail(ex.Message));
+    }
 }
 
     [HttpPost("request-reset")]
