@@ -11,7 +11,8 @@ public record RegisterDto(
 );
 public record LoginDto(
     string email,
-    string Password
+    string Password,
+    string? CaptchaToken
 );
 
 public record UserDto(
