@@ -17,10 +17,12 @@ public class AppointmentController : ControllerBase
 {
     private readonly IAppointmentService _appointmentService;
     private readonly IUserService _userService;
-    public AppointmentController(IAppointmentService appointmentService, IUserService userService)
+    private readonly ILogService _logService;
+    public AppointmentController(IAppointmentService appointmentService, IUserService userService, ILogService logService)
     {
         _appointmentService = appointmentService;
         _userService = userService;
+        _logService = logService;
     }
 
     // GET api/v1/citas

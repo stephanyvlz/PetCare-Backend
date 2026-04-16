@@ -13,7 +13,7 @@ public class LogRepository : ILogRepository
     {
         await _context.Logs.AddAsync(log);
     }
-    public async Task SaveChangesAsync() // 👈 agregar esto
+    public async Task SaveChangesAsync()
     {
         await _context.SaveChangesAsync();
     }
