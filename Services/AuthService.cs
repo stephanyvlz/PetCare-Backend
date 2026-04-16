@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using System.Text.Json;
 using Microsoft.AspNetCore.WebUtilities;
 using PetCare.API.Helpers;
 using PetCare.API.Models.DTOs;
@@ -17,12 +18,16 @@ public class AuthService : IAuthService
 
     private readonly ILogService _log;
 
-        public AuthService(IUserRepository repo, JwtHelper jwt, IEmailService emailService, ILogService log)
+    private readonly IConfiguration _config;
+
+
+        public AuthService(IUserRepository repo, JwtHelper jwt, IEmailService emailService, ILogService log,  IConfiguration config)
         {
             _repo = repo;
             _jwt = jwt;
             _emailService = emailService;
             _log = log;
+            _config = config;;
         }
 
     public async Task<string> RegisterAsync(RegisterDto dto)
@@ -59,9 +64,27 @@ public class AuthService : IAuthService
     return "Usuario registrado exitosamente";
 }
 
-   public async Task<LoginResponseDto> LoginAsync(LoginDto dto)
+public async Task<LoginResponseDto> LoginAsync(LoginDto dto)
+{
+    // Solo validar captcha si viene en la petición
+    if (!string.IsNullOrEmpty(dto.CaptchaToken))
+    {
+        var isCaptchaValid = await VerifyCaptcha(dto.CaptchaToken);
+
+        if (!isCaptchaValid)
         {
-            var user = await _repo.GetByEmailAsync(dto.email);
+            try
+            {
+                await _log.LogError($"Login bloqueado por captcha inválido ({dto.email})");
+                await _repo.SaveChangesAsync();
+            }
+            catch { }
+
+            throw new Exception("Captcha inválido");
+        }
+    }
+
+    var user = await _repo.GetByEmailAsync(dto.email);
 
             if (user == null)
             {
@@ -70,7 +93,7 @@ public class AuthService : IAuthService
                     await _log.LogError($"Login fallido: usuario no existe ({dto.email})");
                     await _repo.SaveChangesAsync();
                 }
-                catch { /* no dejes que el log rompa el flujo */ }
+                catch { }
 
                 throw new Exception("Credenciales inválidas");
             }
@@ -94,7 +117,25 @@ public class AuthService : IAuthService
 
             return new LoginResponseDto(token);
         }
+
+        private async Task<bool> VerifyCaptcha(string token)
+            {
+                var client = new HttpClient();
+                var secret = _config["Recaptcha:SecretKey"];
+
+                var response = await client.PostAsync(
+                    $"https://www.google.com/recaptcha/api/siteverify?secret={secret}&response={token}",
+                    null
+                );
+
+                var json = await response.Content.ReadAsStringAsync();
+
+               var result = JsonSerializer.Deserialize<JsonElement>(json);
+
+                return result.GetProperty("success").GetBoolean();
+            }
         
+
     public async Task RequestPasswordResetAsync(string email)
     {
         try
